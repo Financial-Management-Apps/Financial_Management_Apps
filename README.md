@@ -12,7 +12,7 @@
   <br>3.1 Sơ đồ tổng quan đề tài
 
 4. Triển khai dự án
-  4.1. Mô tả tổng quan:
+  <br>4.1. Mô tả tổng quan:
   - Xây dựng ứng dụng WinForm và WebForm giúp người dùng quản lý tài chính cá nhân, từ đó đưa ra các gợi ý về chi tiêu, tiết kiệm, và đầu tư
 
   4.2. Yêu cầu chức năng, thành phần
