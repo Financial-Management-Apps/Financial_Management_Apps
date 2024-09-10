@@ -1,1 +1,1 @@
-# Financial_Management_App
+# Financial_Management
