@@ -9,7 +9,7 @@
 - Visual Studio 2022
 
 3. Chi tiết đề tài
-  3.1 Sơ đồ tổng quan đề tài
+  <br>3.1 Sơ đồ tổng quan đề tài
 
 4. Triển khai dự án
   4.1. Mô tả tổng quan:
