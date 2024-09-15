@@ -15,11 +15,6 @@
 
 - **.Net Framework**: Version 4.8
 - **IDE**: Visual Studio 2022
-- **Web Framework**: ASP.NET MVC
-- **Ngôn ngữ lập trình**: C#
-- **CSS Framework**: Bootstrap
-- **AI**: Công cụ và thư viện AI cho gợi ý chi tiêu
-
 ***
 
 ### 3. Chi tiết đề tài
