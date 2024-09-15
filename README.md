@@ -21,7 +21,7 @@
 
 3.1 **Sơ đồ tổng quan đề tài**
 
-   - Đang cập nhật hoặc chèn sơ đồ tại đây.
+   - Đang cập nhật.
 
 ***
 
