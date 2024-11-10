@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmManhinhchinh", "FrmManhinhchinh\FrmManhinhchinh.csproj", "{B8F0F6D8-446F-4E5B-B4C4-C905A8135E17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLThuChiAPI", "QLThuChiAPI\QLThuChiAPI.csproj", "{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8F0F6D8-446F-4E5B-B4C4-C905A8135E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F0F6D8-446F-4E5B-B4C4-C905A8135E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F0F6D8-446F-4E5B-B4C4-C905A8135E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F0F6D8-446F-4E5B-B4C4-C905A8135E17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EBA7DD1-9F68-4FA6-AA45-5C3DD020D5B4}
+	EndGlobalSection
+EndGlobal

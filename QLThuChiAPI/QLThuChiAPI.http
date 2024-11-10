@@ -1,0 +1,6 @@
+@QLThuChiAPI_HostAddress = http://localhost:5048
+
+GET {{QLThuChiAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
