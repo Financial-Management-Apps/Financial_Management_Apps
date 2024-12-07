@@ -59,17 +59,20 @@ namespace FrmManhinhchinh
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.ButtonHighlight;
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(txtVi);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(11, 12);
+            groupBox1.Location = new Point(10, 9);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(889, 673);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(948, 571);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Nhập Vào";
+            groupBox1.Text = "Nhập liệu";
             // 
             // groupBox2
             // 
@@ -82,73 +85,84 @@ namespace FrmManhinhchinh
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(groupBox4);
             groupBox2.Controls.Add(groupBox3);
-            groupBox2.Location = new Point(38, 124);
+            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(33, 93);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(808, 489);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(878, 458);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Thông Tin";
+            groupBox2.Text = "Thông tin";
             // 
             // btnOK
             // 
-            btnOK.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnOK.Location = new Point(695, 426);
+            btnOK.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOK.Location = new Point(473, 392);
+            btnOK.Margin = new Padding(3, 2, 3, 2);
             btnOK.Name = "btnOK";
-            btnOK.Size = new Size(94, 39);
+            btnOK.Size = new Size(164, 52);
             btnOK.TabIndex = 1;
-            btnOK.Text = "OK";
+            btnOK.Text = "Xác nhận";
             btnOK.UseVisualStyleBackColor = true;
             btnOK.Click += btnOK_Click;
             // 
             // txtTien
             // 
-            txtTien.Location = new Point(450, 76);
+            txtTien.Location = new Point(442, 76);
+            txtTien.Margin = new Padding(3, 2, 3, 2);
             txtTien.Name = "txtTien";
-            txtTien.Size = new Size(189, 31);
+            txtTien.Size = new Size(380, 29);
             txtTien.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(341, 80);
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(311, 80);
             label4.Name = "label4";
-            label4.Size = new Size(75, 25);
+            label4.Size = new Size(74, 25);
             label4.TabIndex = 6;
-            label4.Text = "Số Tiền";
+            label4.Text = "Số tiền";
             // 
             // txtGhiChu
             // 
-            txtGhiChu.Location = new Point(450, 273);
+            txtGhiChu.Location = new Point(442, 223);
+            txtGhiChu.Margin = new Padding(3, 2, 3, 2);
+            txtGhiChu.Multiline = true;
             txtGhiChu.Name = "txtGhiChu";
-            txtGhiChu.Size = new Size(339, 31);
+            txtGhiChu.Size = new Size(380, 128);
             txtGhiChu.TabIndex = 5;
             txtGhiChu.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(341, 275);
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(311, 223);
             label3.Name = "label3";
-            label3.Size = new Size(79, 25);
+            label3.Size = new Size(82, 25);
             label3.TabIndex = 4;
             label3.Text = "Ghi Chú";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(450, 175);
+            dateTimePicker1.Location = new Point(442, 148);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(339, 31);
+            dateTimePicker1.Size = new Size(380, 29);
             dateTimePicker1.TabIndex = 3;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(341, 180);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(311, 148);
             label2.Name = "label2";
-            label2.Size = new Size(94, 25);
+            label2.Size = new Size(95, 25);
             label2.TabIndex = 2;
-            label2.Text = "Thời Gian";
+            label2.Text = "Thời gian";
             // 
             // groupBox4
             // 
@@ -159,9 +173,11 @@ namespace FrmManhinhchinh
             groupBox4.Controls.Add(rbBanBe);
             groupBox4.Controls.Add(rbAnUong);
             groupBox4.Controls.Add(rbDiLai);
-            groupBox4.Location = new Point(53, 203);
+            groupBox4.Location = new Point(46, 195);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(198, 261);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(192, 216);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "Danh Mục";
@@ -169,9 +185,10 @@ namespace FrmManhinhchinh
             // rbLuong
             // 
             rbLuong.AutoSize = true;
-            rbLuong.Location = new Point(40, 223);
+            rbLuong.Location = new Point(35, 144);
+            rbLuong.Margin = new Padding(3, 2, 3, 2);
             rbLuong.Name = "rbLuong";
-            rbLuong.Size = new Size(87, 29);
+            rbLuong.Size = new Size(77, 25);
             rbLuong.TabIndex = 4;
             rbLuong.TabStop = true;
             rbLuong.Tag = "6";
@@ -181,9 +198,10 @@ namespace FrmManhinhchinh
             // rbTienPhong
             // 
             rbTienPhong.AutoSize = true;
-            rbTienPhong.Location = new Point(40, 188);
+            rbTienPhong.Location = new Point(36, 115);
+            rbTienPhong.Margin = new Padding(3, 2, 3, 2);
             rbTienPhong.Name = "rbTienPhong";
-            rbTienPhong.Size = new Size(130, 29);
+            rbTienPhong.Size = new Size(115, 25);
             rbTienPhong.TabIndex = 1;
             rbTienPhong.TabStop = true;
             rbTienPhong.Tag = "5";
@@ -193,9 +211,10 @@ namespace FrmManhinhchinh
             // rbMuaSam
             // 
             rbMuaSam.AutoSize = true;
-            rbMuaSam.Location = new Point(40, 153);
+            rbMuaSam.Location = new Point(35, 29);
+            rbMuaSam.Margin = new Padding(3, 2, 3, 2);
             rbMuaSam.Name = "rbMuaSam";
-            rbMuaSam.Size = new Size(112, 29);
+            rbMuaSam.Size = new Size(99, 25);
             rbMuaSam.TabIndex = 3;
             rbMuaSam.TabStop = true;
             rbMuaSam.Tag = "4";
@@ -205,9 +224,10 @@ namespace FrmManhinhchinh
             // rbBanBe
             // 
             rbBanBe.AutoSize = true;
-            rbBanBe.Location = new Point(40, 115);
+            rbBanBe.Location = new Point(35, 86);
+            rbBanBe.Margin = new Padding(3, 2, 3, 2);
             rbBanBe.Name = "rbBanBe";
-            rbBanBe.Size = new Size(93, 29);
+            rbBanBe.Size = new Size(80, 25);
             rbBanBe.TabIndex = 2;
             rbBanBe.TabStop = true;
             rbBanBe.Tag = "3";
@@ -217,25 +237,27 @@ namespace FrmManhinhchinh
             // rbAnUong
             // 
             rbAnUong.AutoSize = true;
-            rbAnUong.Location = new Point(40, 77);
+            rbAnUong.Location = new Point(35, 58);
+            rbAnUong.Margin = new Padding(3, 2, 3, 2);
             rbAnUong.Name = "rbAnUong";
-            rbAnUong.Size = new Size(108, 29);
+            rbAnUong.Size = new Size(114, 25);
             rbAnUong.TabIndex = 1;
             rbAnUong.TabStop = true;
             rbAnUong.Tag = "2";
-            rbAnUong.Text = "Ăn Uống";
+            rbAnUong.Text = "Thực phẩm";
             rbAnUong.UseVisualStyleBackColor = true;
             // 
             // rbDiLai
             // 
             rbDiLai.AutoSize = true;
-            rbDiLai.Location = new Point(40, 37);
+            rbDiLai.Location = new Point(35, 173);
+            rbDiLai.Margin = new Padding(3, 2, 3, 2);
             rbDiLai.Name = "rbDiLai";
-            rbDiLai.Size = new Size(80, 29);
+            rbDiLai.Size = new Size(123, 25);
             rbDiLai.TabIndex = 0;
             rbDiLai.TabStop = true;
             rbDiLai.Tag = "1";
-            rbDiLai.Text = "Đi Lại";
+            rbDiLai.Text = "Phương tiện";
             rbDiLai.UseVisualStyleBackColor = true;
             rbDiLai.CheckedChanged += rbDiLai_CheckedChanged;
             // 
@@ -244,9 +266,11 @@ namespace FrmManhinhchinh
             groupBox3.BackColor = SystemColors.ButtonHighlight;
             groupBox3.Controls.Add(rbChiTieu);
             groupBox3.Controls.Add(rbThuNhap);
-            groupBox3.Location = new Point(53, 57);
+            groupBox3.Location = new Point(46, 43);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(198, 125);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(192, 94);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Loại ";
@@ -254,9 +278,10 @@ namespace FrmManhinhchinh
             // rbChiTieu
             // 
             rbChiTieu.AutoSize = true;
-            rbChiTieu.Location = new Point(41, 87);
+            rbChiTieu.Location = new Point(35, 65);
+            rbChiTieu.Margin = new Padding(3, 2, 3, 2);
             rbChiTieu.Name = "rbChiTieu";
-            rbChiTieu.Size = new Size(102, 29);
+            rbChiTieu.Size = new Size(90, 25);
             rbChiTieu.TabIndex = 1;
             rbChiTieu.TabStop = true;
             rbChiTieu.Tag = "2";
@@ -266,9 +291,10 @@ namespace FrmManhinhchinh
             // rbThuNhap
             // 
             rbThuNhap.AutoSize = true;
-            rbThuNhap.Location = new Point(41, 33);
+            rbThuNhap.Location = new Point(36, 25);
+            rbThuNhap.Margin = new Padding(3, 2, 3, 2);
             rbThuNhap.Name = "rbThuNhap";
-            rbThuNhap.Size = new Size(117, 29);
+            rbThuNhap.Size = new Size(103, 25);
             rbThuNhap.TabIndex = 0;
             rbThuNhap.TabStop = true;
             rbThuNhap.Tag = "1";
@@ -278,37 +304,44 @@ namespace FrmManhinhchinh
             // txtVi
             // 
             txtVi.BorderStyle = BorderStyle.None;
-            txtVi.Location = new Point(160, 67);
+            txtVi.Enabled = false;
+            txtVi.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtVi.Location = new Point(174, 39);
+            txtVi.Margin = new Padding(3, 2, 3, 2);
+            txtVi.Multiline = true;
             txtVi.Name = "txtVi";
-            txtVi.Size = new Size(174, 24);
+            txtVi.Size = new Size(336, 32);
             txtVi.TabIndex = 2;
             // 
             // button1
             // 
-            button1.Location = new Point(154, 56);
+            button1.Location = new Point(163, 24);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(185, 51);
+            button1.Size = new Size(362, 57);
             button1.TabIndex = 1;
             button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(66, 67);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(63, 41);
             label1.Name = "label1";
-            label1.Size = new Size(29, 25);
+            label1.Size = new Size(94, 30);
             label1.TabIndex = 0;
-            label1.Text = "Ví";
+            label1.Text = "Số dư ví";
             label1.Click += label1_Click;
             // 
             // NhapVao
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(902, 687);
+            BackColor = SystemColors.InactiveCaption;
+            ClientSize = new Size(970, 591);
             Controls.Add(groupBox1);
             ForeColor = SystemColors.ActiveCaptionText;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "NhapVao";
             Text = "Form1";
             groupBox1.ResumeLayout(false);

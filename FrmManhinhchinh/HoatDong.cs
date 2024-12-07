@@ -39,14 +39,12 @@ namespace FrmManhinhchinh
         {
             DataGridView dataGridView = (DataGridView)sender;
             int currentRow = dataGridView.CurrentRow.Index;
-
             lblID.Text = dataGridView.Rows[currentRow].Cells[0].Value.ToString();
             txtLoai.Text = dataGridView.Rows[currentRow].Cells[1].Value.ToString();
             dpTime.Text = dataGridView.Rows[currentRow].Cells[2].Value.ToString();
             txtGhiChu.Text = dataGridView.Rows[currentRow].Cells[3].Value.ToString();
             txtSoTien.Text = dataGridView.Rows[currentRow].Cells[4].Value.ToString();
             txtDanhMuc.Text = dataGridView.Rows[currentRow].Cells[5].Value.ToString();
-
             temAmount = txtSoTien.Text;
         }
 

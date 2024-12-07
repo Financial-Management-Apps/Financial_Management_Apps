@@ -17,7 +17,7 @@ namespace FrmManhinhchinh.Data
     
     public class Connect
     {
-        private string connectionString = "Data Source=LAPTOP-H2SUB5OD\\SQLEXPRESS;Initial Catalog=QLCT03;"
+        private string connectionString = "Data Source=DESKTOP-6DJ3LQS\\VINHPHU;Initial Catalog=QLCT03;"
              + "Integrated Security=True;Encrypt=False";
 
         public SqlConnection GetConnection()

@@ -29,9 +29,16 @@ namespace FrmManhinhchinh
             string confirmPassword = txtConfirm.Text;
             string Email = txtEmail.Text;
             Connect connect = new Connect();
-            connect.RegisterUser(HoTen, GioiTinh, NgaySinh, Email, DiaChi, Password,confirmPassword);
+            connect.RegisterUser(HoTen, GioiTinh, NgaySinh, Email, DiaChi, Password, confirmPassword);
             this.Close();
 
+        }
+
+        private void btnDN_Click(object sender, EventArgs e)
+        {
+            Dangnhap DN = new Dangnhap();
+            DN.Show();
+            this.Hide();
         }
     }
 }

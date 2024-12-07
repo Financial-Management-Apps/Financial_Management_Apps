@@ -52,17 +52,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 126);
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(22, 63);
             label1.Name = "label1";
-            label1.Size = new Size(85, 15);
+            label1.Size = new Size(121, 19);
             label1.TabIndex = 0;
             label1.Text = "Tổng thu nhập";
             // 
             // totalTextBox
             // 
-            totalTextBox.Location = new Point(188, 123);
+            totalTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            totalTextBox.Location = new Point(158, 58);
             totalTextBox.Name = "totalTextBox";
-            totalTextBox.Size = new Size(140, 23);
+            totalTextBox.Size = new Size(170, 29);
             totalTextBox.TabIndex = 1;
             // 
             // label2
@@ -76,58 +78,65 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(22, 189);
+            label3.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label3.Location = new Point(22, 121);
             label3.Name = "label3";
-            label3.Size = new Size(78, 15);
+            label3.Size = new Size(109, 19);
             label3.TabIndex = 4;
             label3.Text = "Tiền tiết kiệm";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(22, 246);
+            label4.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label4.Location = new Point(22, 177);
             label4.Name = "label4";
-            label4.Size = new Size(52, 15);
+            label4.Size = new Size(75, 19);
             label4.TabIndex = 5;
             label4.Text = "Tiền nhà";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(22, 304);
+            label5.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label5.Location = new Point(22, 227);
             label5.Name = "label5";
-            label5.Size = new Size(93, 15);
+            label5.Size = new Size(129, 19);
             label5.TabIndex = 6;
             label5.Text = "Qũy trải nghiệm";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(22, 358);
+            label6.Font = new Font("Arial", 12F, FontStyle.Bold);
+            label6.Location = new Point(22, 312);
             label6.Name = "label6";
-            label6.Size = new Size(137, 15);
+            label6.Size = new Size(193, 19);
             label6.TabIndex = 7;
             label6.Text = "Mức chi tiêu hàng tháng";
             // 
             // rentTextBox
             // 
-            rentTextBox.Location = new Point(188, 243);
+            rentTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rentTextBox.Location = new Point(158, 172);
             rentTextBox.Name = "rentTextBox";
-            rentTextBox.Size = new Size(140, 23);
+            rentTextBox.Size = new Size(170, 29);
             rentTextBox.TabIndex = 8;
             // 
             // experienceTextBox
             // 
-            experienceTextBox.Location = new Point(188, 296);
+            experienceTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            experienceTextBox.Location = new Point(22, 262);
             experienceTextBox.Name = "experienceTextBox";
-            experienceTextBox.Size = new Size(140, 23);
+            experienceTextBox.Size = new Size(306, 29);
             experienceTextBox.TabIndex = 9;
             // 
             // expenseTextBox
             // 
-            expenseTextBox.Location = new Point(188, 355);
+            expenseTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            expenseTextBox.Location = new Point(22, 355);
             expenseTextBox.Name = "expenseTextBox";
-            expenseTextBox.Size = new Size(140, 23);
+            expenseTextBox.Size = new Size(306, 29);
             expenseTextBox.TabIndex = 10;
             // 
             // label7
@@ -148,16 +157,18 @@
             // 
             // savingTextBox
             // 
-            savingTextBox.Location = new Point(188, 189);
+            savingTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            savingTextBox.Location = new Point(158, 116);
             savingTextBox.Name = "savingTextBox";
-            savingTextBox.Size = new Size(140, 23);
+            savingTextBox.Size = new Size(170, 29);
             savingTextBox.TabIndex = 13;
             // 
             // suggestButton
             // 
-            suggestButton.Location = new Point(253, 401);
+            suggestButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            suggestButton.Location = new Point(86, 420);
             suggestButton.Name = "suggestButton";
-            suggestButton.Size = new Size(75, 23);
+            suggestButton.Size = new Size(146, 50);
             suggestButton.TabIndex = 14;
             suggestButton.Text = "Gợi ý";
             suggestButton.UseVisualStyleBackColor = true;
@@ -167,9 +178,9 @@
             // 
             chartArea1.Name = "ChartArea1";
             chart1.ChartAreas.Add(chartArea1);
-            chart1.Location = new Point(334, 12);
+            chart1.Location = new Point(346, 12);
             chart1.Name = "chart1";
-            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Name = "s1";
@@ -183,7 +194,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(789, 515);
+            ClientSize = new Size(823, 543);
             Controls.Add(chart1);
             Controls.Add(suggestButton);
             Controls.Add(savingTextBox);

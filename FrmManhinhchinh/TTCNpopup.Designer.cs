@@ -68,116 +68,128 @@
             // 
             txtHoTen.BackColor = Color.LightGray;
             txtHoTen.BorderStyle = BorderStyle.None;
+            txtHoTen.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtHoTen.Location = new Point(13, 8);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(305, 16);
+            txtHoTen.Size = new Size(305, 20);
             txtHoTen.TabIndex = 0;
             // 
             // txtGioiTinh
             // 
             txtGioiTinh.BackColor = Color.LightGray;
             txtGioiTinh.BorderStyle = BorderStyle.None;
+            txtGioiTinh.Font = new Font("Segoe UI", 11.25F);
             txtGioiTinh.Location = new Point(13, 9);
             txtGioiTinh.Name = "txtGioiTinh";
-            txtGioiTinh.Size = new Size(305, 16);
+            txtGioiTinh.Size = new Size(305, 20);
             txtGioiTinh.TabIndex = 1;
             // 
             // txtDiaChi
             // 
             txtDiaChi.BackColor = Color.LightGray;
             txtDiaChi.BorderStyle = BorderStyle.None;
+            txtDiaChi.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDiaChi.Location = new Point(13, 9);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(305, 16);
+            txtDiaChi.Size = new Size(305, 20);
             txtDiaChi.TabIndex = 3;
             // 
             // txtEmail
             // 
             txtEmail.BackColor = Color.LightGray;
             txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.Location = new Point(13, 9);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(305, 16);
+            txtEmail.Size = new Size(305, 20);
             txtEmail.TabIndex = 2;
             // 
             // txtPass
             // 
             txtPass.BackColor = Color.LightGray;
             txtPass.BorderStyle = BorderStyle.None;
+            txtPass.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPass.Location = new Point(13, 9);
             txtPass.Name = "txtPass";
-            txtPass.Size = new Size(305, 16);
+            txtPass.Size = new Size(305, 20);
             txtPass.TabIndex = 5;
             // 
             // txtNgaySinh
             // 
             txtNgaySinh.BackColor = Color.LightGray;
             txtNgaySinh.BorderStyle = BorderStyle.None;
+            txtNgaySinh.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNgaySinh.Location = new Point(13, 9);
             txtNgaySinh.Name = "txtNgaySinh";
-            txtNgaySinh.Size = new Size(305, 16);
+            txtNgaySinh.Size = new Size(305, 20);
             txtNgaySinh.TabIndex = 4;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(98, 180);
+            label1.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(62, 109);
             label1.Name = "label1";
-            label1.Size = new Size(44, 15);
+            label1.Size = new Size(72, 22);
             label1.TabIndex = 6;
             label1.Text = "Họ Tên";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(97, 237);
+            label2.Font = new Font("Arial", 14.25F);
+            label2.Location = new Point(46, 173);
             label2.Name = "label2";
-            label2.Size = new Size(54, 15);
+            label2.Size = new Size(88, 22);
             label2.TabIndex = 7;
             label2.Text = "Giới Tính";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(98, 291);
+            label3.Font = new Font("Arial", 14.25F);
+            label3.Location = new Point(39, 240);
             label3.Name = "label3";
-            label3.Size = new Size(61, 15);
+            label3.Size = new Size(95, 22);
             label3.TabIndex = 8;
             label3.Text = "Ngày Sinh";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(98, 343);
+            label4.Font = new Font("Arial", 14.25F);
+            label4.Location = new Point(77, 304);
             label4.Name = "label4";
-            label4.Size = new Size(36, 15);
+            label4.Size = new Size(57, 22);
             label4.TabIndex = 9;
             label4.Text = "Email";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(98, 394);
+            label5.Font = new Font("Arial", 14.25F);
+            label5.Location = new Point(63, 370);
             label5.Name = "label5";
-            label5.Size = new Size(45, 15);
+            label5.Size = new Size(71, 22);
             label5.TabIndex = 10;
             label5.Text = "Địa Chỉ";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(98, 446);
+            label6.Font = new Font("Arial", 14.25F);
+            label6.Location = new Point(39, 430);
             label6.Name = "label6";
-            label6.Size = new Size(57, 15);
+            label6.Size = new Size(94, 22);
             label6.TabIndex = 11;
             label6.Text = "Password";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(261, 22);
+            pictureBox1.Location = new Point(522, 149);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(187, 125);
+            pictureBox1.Size = new Size(325, 403);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
@@ -186,9 +198,9 @@
             // 
             panel2.BackColor = Color.LightGray;
             panel2.Controls.Add(txtHoTen);
-            panel2.Location = new Point(177, 172);
+            panel2.Location = new Point(159, 101);
             panel2.Name = "panel2";
-            panel2.Size = new Size(336, 28);
+            panel2.Size = new Size(336, 35);
             panel2.TabIndex = 13;
             // 
             // bunifuElipse1
@@ -200,45 +212,46 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(txtGioiTinh);
-            panel1.Location = new Point(177, 224);
+            panel1.Font = new Font("Segoe UI", 11.25F);
+            panel1.Location = new Point(159, 160);
             panel1.Name = "panel1";
-            panel1.Size = new Size(336, 28);
+            panel1.Size = new Size(336, 35);
             panel1.TabIndex = 14;
             // 
             // panel3
             // 
             panel3.BackColor = Color.LightGray;
             panel3.Controls.Add(txtEmail);
-            panel3.Location = new Point(177, 330);
+            panel3.Location = new Point(159, 291);
             panel3.Name = "panel3";
-            panel3.Size = new Size(336, 28);
+            panel3.Size = new Size(336, 35);
             panel3.TabIndex = 16;
             // 
             // panel4
             // 
             panel4.BackColor = Color.LightGray;
             panel4.Controls.Add(txtNgaySinh);
-            panel4.Location = new Point(177, 278);
+            panel4.Location = new Point(159, 227);
             panel4.Name = "panel4";
-            panel4.Size = new Size(336, 28);
+            panel4.Size = new Size(336, 35);
             panel4.TabIndex = 15;
             // 
             // panel5
             // 
             panel5.BackColor = Color.LightGray;
             panel5.Controls.Add(txtPass);
-            panel5.Location = new Point(177, 433);
+            panel5.Location = new Point(159, 415);
             panel5.Name = "panel5";
-            panel5.Size = new Size(336, 28);
+            panel5.Size = new Size(336, 37);
             panel5.TabIndex = 16;
             // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
             panel6.Controls.Add(txtDiaChi);
-            panel6.Location = new Point(177, 381);
+            panel6.Location = new Point(159, 357);
             panel6.Name = "panel6";
-            panel6.Size = new Size(336, 28);
+            panel6.Size = new Size(336, 35);
             panel6.TabIndex = 15;
             // 
             // bunifuElipse2
@@ -270,7 +283,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(698, 483);
+            ClientSize = new Size(848, 555);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel6);

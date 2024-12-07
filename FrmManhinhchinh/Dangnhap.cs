@@ -53,12 +53,7 @@ namespace FrmManhinhchinh
                     MessageBox.Show("Email hoặc mật khẩu không chính xác !", "Thông Báo");
                 }
             }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        }      
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -75,6 +70,11 @@ namespace FrmManhinhchinh
         private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

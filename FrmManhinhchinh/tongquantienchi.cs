@@ -18,7 +18,7 @@ namespace FrmManhinhchinh
 
         SqlConnection connection;
         SqlCommand command;
-        string connectionString = "Data Source=LAPTOP-H2SUB5OD\\SQLEXPRESS;Initial Catalog=QLCT03;"
+        string connectionString = "Data Source=DESKTOP-6DJ3LQS\\VINHPHU;Initial Catalog=QLCT03;"
              + "Integrated Security=True;Encrypt=False";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
@@ -35,16 +35,10 @@ namespace FrmManhinhchinh
                 using (connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-
                     string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
                                         "FROM ChiTieu " +
                                         "WHERE DanhMucID = '4' AND LoaiID = '2' AND NDID = @UserID " +
                                          "GROUP BY DAY(ThoiGian)";
-
-
-
-
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
                         commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
@@ -56,12 +50,6 @@ namespace FrmManhinhchinh
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Red;
                         chart1.DataBind();
-
-
-
-
-
-
                     }
                 }
             }
@@ -69,22 +57,15 @@ namespace FrmManhinhchinh
             {
                 MessageBox.Show(ex.Message);
             }
-
             try
             {
                 using (connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-
                     string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
                                         "FROM ChiTieu " +
                                         "WHERE DanhMucID = '2' AND LoaiID = '2' AND NDID = @UserID " +
                                          "GROUP BY DAY(ThoiGian)";
-
-
-
-
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
                         commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
@@ -110,16 +91,10 @@ namespace FrmManhinhchinh
                 using (connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-
                     string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
                                         "FROM ChiTieu " +
                                         "WHERE DanhMucID = '3' AND LoaiID = '2' AND NDID = @UserID " +
                                          "GROUP BY DAY(ThoiGian)";
-
-
-
-
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
                         commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
@@ -139,22 +114,15 @@ namespace FrmManhinhchinh
             {
                 MessageBox.Show(ex.Message);
             }
-
             try
             {
                 using (connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-
                     string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
                                         "FROM ChiTieu " +
                                         "WHERE DanhMucID = '1' AND LoaiID = '2' AND NDID = @UserID " +
                                          "GROUP BY DAY(ThoiGian)";
-
-
-
-
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
                         commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
@@ -166,7 +134,6 @@ namespace FrmManhinhchinh
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Green;
                         chart1.DataBind();
-
                     }
                 }
             }
@@ -174,22 +141,15 @@ namespace FrmManhinhchinh
             {
                 MessageBox.Show(ex.Message);
             }
-
             try
             {
                 using (connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-
                     string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
                                         "FROM ChiTieu " +
                                         "WHERE DanhMucID = '5' AND LoaiID = '2' AND NDID = @UserID " +
                                          "GROUP BY DAY(ThoiGian)";
-
-
-
-
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
                         commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
@@ -201,7 +161,6 @@ namespace FrmManhinhchinh
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Black;
                         chart1.DataBind();
-
                     }
                 }
             }
@@ -209,10 +168,7 @@ namespace FrmManhinhchinh
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
-
         private void btnthoat_Click(object sender, EventArgs e)
         {
             Close();

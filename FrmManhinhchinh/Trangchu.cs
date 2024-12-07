@@ -114,7 +114,7 @@ namespace FrmManhinhchinh
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Trangchu(currentUser), sender);
         }
 
         private void bunifuThinButton24_Click(object sender, EventArgs e)
@@ -141,6 +141,13 @@ namespace FrmManhinhchinh
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void bunifuThinButton25_Click(object sender, EventArgs e)
+        {
+            Dangnhap frmDN = new Dangnhap();
+            frmDN.Show();
+            this.Close();
         }
     }
 }

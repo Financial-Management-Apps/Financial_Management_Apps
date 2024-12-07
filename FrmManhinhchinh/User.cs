@@ -45,8 +45,13 @@ namespace FrmManhinhchinh
         private void bunifuThinButton26_Click(object sender, EventArgs e)
         {
 
-            OpenChildForm(new  TTCNpopup(currentUser), sender);
+            OpenChildForm(new TTCNpopup(currentUser), sender);
 
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Notification(), sender);
         }
     }
 }

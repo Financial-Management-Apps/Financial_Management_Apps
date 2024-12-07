@@ -28,99 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelhienthi = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            panelhienthi = new Panel();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(11, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(675, 40);
-            this.panel1.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(336, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Xuất Excel";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.SandyBrown;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(168, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Tổng Quan Tiền Chi";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SandyBrown;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tổng Quan Thu Chi";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panelhienthi
-            // 
-            this.panelhienthi.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panelhienthi.Location = new System.Drawing.Point(12, 67);
-            this.panelhienthi.Name = "panelhienthi";
-            this.panelhienthi.Size = new System.Drawing.Size(675, 405);
-            this.panelhienthi.TabIndex = 1;
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(13, 14);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(790, 46);
+            panel1.TabIndex = 0;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Font = new System.Drawing.Font("Sitka Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.Location = new System.Drawing.Point(504, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Quay Lại ";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.BackColor = Color.Turquoise;
+            button4.Dock = DockStyle.Left;
+            button4.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button4.Location = new Point(588, 0);
+            button4.Margin = new Padding(4, 3, 4, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(196, 46);
+            button4.TabIndex = 3;
+            button4.Text = "Quay Lại ";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
-            // trangchu
+            // button3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(698, 483);
-            this.Controls.Add(this.panelhienthi);
-            this.Controls.Add(this.panel1);
-            this.Name = "trangchu";
-            this.Text = "trangchu";
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            button3.BackColor = Color.Turquoise;
+            button3.Dock = DockStyle.Left;
+            button3.Font = new Font("Sitka Small", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button3.Location = new Point(392, 0);
+            button3.Margin = new Padding(4, 3, 4, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(196, 46);
+            button3.TabIndex = 2;
+            button3.Text = "Báo cáo";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Turquoise;
+            button2.Dock = DockStyle.Left;
+            button2.Font = new Font("Sitka Small", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button2.Location = new Point(196, 0);
+            button2.Margin = new Padding(4, 3, 4, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(196, 46);
+            button2.TabIndex = 1;
+            button2.Text = "Tổng quan tiền chi";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Turquoise;
+            button1.Dock = DockStyle.Left;
+            button1.Font = new Font("Sitka Small", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(196, 46);
+            button1.TabIndex = 0;
+            button1.Text = "Tổng quan thu chi";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panelhienthi
+            // 
+            panelhienthi.BackColor = SystemColors.ButtonFace;
+            panelhienthi.Location = new Point(14, 66);
+            panelhienthi.Margin = new Padding(4, 3, 4, 3);
+            panelhienthi.Name = "panelhienthi";
+            panelhienthi.Size = new Size(789, 542);
+            panelhienthi.TabIndex = 1;
+            // 
+            // ThongKe
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(830, 620);
+            Controls.Add(panelhienthi);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "ThongKe";
+            Text = "trangchu";
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

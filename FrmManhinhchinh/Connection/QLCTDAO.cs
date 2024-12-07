@@ -4,17 +4,22 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using FrmManhinhchinh.Data;
 using FrmManhinhchinh.Model.Command;
 using FrmManhinhchinh.Model.DTO;
 using FrmManhinhchinh.Utils;
+using FrmManhinhchinh.ModelTB.DTO;
+using FrmManhinhchinh.DataTB;
+using Microsoft.VisualBasic.ApplicationServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FrmManhinhchinh.Connection
 {
     public class QLCTDAO
     {
-        public static string connectionString = @"Data Source=LAPTOP-H2SUB5OD\SQLEXPRESS;Initial Catalog=QLCT03;Integrated Security=True;Encrypt=False";
+        public static string connectionString = @"Data Source=DESKTOP-6DJ3LQS\VINHPHU;Initial Catalog=QLCT03;Integrated Security=True;Encrypt=False";
 
         public QLCTDAO()
         {
@@ -168,5 +173,95 @@ namespace FrmManhinhchinh.Connection
                 int rowsAffected = command.ExecuteNonQuery();
             }
         }
+        public List<ModelTB.DTO.Notification> GetNotifications(int userId)
+        {
+            List<ModelTB.DTO.Notification> notifications = new List<ModelTB.DTO.Notification>();
+
+            // Mở kết nối đến SQL Server
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+
+            // Truy vấn SQL lấy thông báo của người dùng
+            SqlCommand sqlCommand = new SqlCommand("SELECT notification_id, user_id, message, is_read, created_at " +
+                "FROM Notifications " +
+                "WHERE user_id = @userId " +
+                "ORDER BY created_at DESC", sqlConnection);
+
+            // Thêm tham số để bảo vệ khỏi SQL Injection
+            sqlCommand.Parameters.AddWithValue("@userId", userId);
+
+            using (SqlDataReader reader = sqlCommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ModelTB.DTO.Notification notification = new ModelTB.DTO.Notification();
+                    notification.NotificationId = reader.GetInt32(0);
+                    notification.UserId = reader.GetInt32(1);
+                    notification.Message = reader.GetString(2);
+                    notification.IsRead = reader.GetBoolean(3);
+                    notification.CreatedAt = reader.GetDateTime(4);
+                    notifications.Add(notification);
+                }
+            }
+            sqlConnection.Close();
+            return notifications;
+        }
+
+        // Hàm thêm thông báo
+        public void AddNotification(ModelTB.DTO.Notification notification)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Notifications (user_id, message, is_read, created_at) VALUES (@userId, @message, @isRead, @createdAt)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@userId", notification.UserId);
+                command.Parameters.AddWithValue("@message", notification.Message);
+                command.Parameters.AddWithValue("@isRead", notification.IsRead);
+                command.Parameters.AddWithValue("@createdAt", notification.CreatedAt);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        // Hàm đánh dấu thông báo là đã đọc
+        public void MarkAsRead(int notificationId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE Notifications SET is_read = 1 WHERE notification_id = @notificationId";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@notificationId", notificationId);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        // Hàm xóa thông báo
+        public void DeleteNotification(int notificationId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Notifications WHERE notification_id = @notificationId";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@notificationId", notificationId);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+        public void UpdateNotification(ModelTB.DTO.Notification notification)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE Notifications SET message = @message, is_read = @isRead, created_at = @createdAt WHERE notification_id = @notificationId";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@notificationId", notification.NotificationId);
+                command.Parameters.AddWithValue("@message", notification.Message);
+                command.Parameters.AddWithValue("@isRead", notification.IsRead);
+                command.Parameters.AddWithValue("@createdAt", notification.CreatedAt);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }
