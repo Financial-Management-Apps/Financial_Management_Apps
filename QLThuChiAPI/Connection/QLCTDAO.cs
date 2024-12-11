@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using FrmManhinhchinh.Model.Command;
-using FrmManhinhchinh.Model.DTO;
-using FrmManhinhchinh.Utils;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿
 
-namespace FrmManhinhchinh.Connection
+using QLThuChiAPI.Model.Command;
+using QLThuChiAPI.Model.DTO;
+using QLThuChiAPI.Utils;
+using System.Data.SqlClient;
+
+namespace QLThuChiAPI.Connection
 {
     public class QLCTDAO
     {

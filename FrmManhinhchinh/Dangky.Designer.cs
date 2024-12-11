@@ -98,9 +98,10 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-1, -2);
+            panel1.Location = new Point(-1, -3);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(865, 491);
+            panel1.Size = new Size(988, 653);
             panel1.TabIndex = 0;
             // 
             // btnDangky
@@ -120,10 +121,10 @@
             btnDangky.IdleFillColor = Color.FromArgb(255, 255, 128);
             btnDangky.IdleForecolor = Color.Black;
             btnDangky.IdleLineColor = Color.Black;
-            btnDangky.Location = new Point(593, 429);
-            btnDangky.Margin = new Padding(5);
+            btnDangky.Location = new Point(678, 572);
+            btnDangky.Margin = new Padding(6, 7, 6, 7);
             btnDangky.Name = "btnDangky";
-            btnDangky.Size = new Size(214, 40);
+            btnDangky.Size = new Size(245, 53);
             btnDangky.TabIndex = 24;
             btnDangky.TextAlign = ContentAlignment.MiddleCenter;
             btnDangky.Click += btnDangky_Click;
@@ -132,9 +133,10 @@
             // 
             pictureBox3.BackColor = Color.FromArgb(53, 45, 125);
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(62, 210);
+            pictureBox3.Location = new Point(71, 280);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(187, 163);
+            pictureBox3.Size = new Size(214, 217);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox3.TabIndex = 23;
             pictureBox3.TabStop = false;
@@ -145,9 +147,9 @@
             label9.BackColor = Color.FromArgb(53, 45, 125);
             label9.Font = new Font("Microsoft JhengHei", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(11, 157);
+            label9.Location = new Point(13, 209);
             label9.Name = "label9";
-            label9.Size = new Size(305, 40);
+            label9.Size = new Size(381, 50);
             label9.TabIndex = 22;
             label9.Text = "QUẢN LÝ CHI TIÊU";
             // 
@@ -157,18 +159,18 @@
             label10.BackColor = Color.FromArgb(53, 45, 125);
             label10.Font = new Font("Microsoft JhengHei", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(51, 95);
+            label10.Location = new Point(58, 127);
             label10.Name = "label10";
-            label10.Size = new Size(241, 45);
+            label10.Size = new Size(297, 56);
             label10.TabIndex = 21;
             label10.Text = "PHẦN MỀM ";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(478, 388);
+            label8.Location = new Point(546, 517);
             label8.Name = "label8";
-            label8.Size = new Size(109, 15);
+            label8.Size = new Size(134, 20);
             label8.TabIndex = 20;
             label8.Text = "Xác nhận Password";
             // 
@@ -176,72 +178,74 @@
             // 
             panel8.BackColor = Color.LightGray;
             panel8.Controls.Add(txtConfirm);
-            panel8.Location = new Point(593, 379);
+            panel8.Location = new Point(678, 505);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(227, 28);
+            panel8.Size = new Size(259, 37);
             panel8.TabIndex = 11;
             // 
             // txtConfirm
             // 
             txtConfirm.BackColor = Color.LightGray;
             txtConfirm.BorderStyle = BorderStyle.None;
-            txtConfirm.Location = new Point(22, 9);
+            txtConfirm.Location = new Point(25, 12);
+            txtConfirm.Margin = new Padding(3, 4, 3, 4);
             txtConfirm.Name = "txtConfirm";
-            txtConfirm.Size = new Size(182, 16);
+            txtConfirm.Size = new Size(208, 20);
             txtConfirm.TabIndex = 4;
             txtConfirm.UseSystemPasswordChar = true;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(478, 344);
+            label7.Location = new Point(546, 459);
             label7.Name = "label7";
-            label7.Size = new Size(57, 15);
+            label7.Size = new Size(70, 20);
             label7.TabIndex = 19;
             label7.Text = "Password";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(481, 299);
+            label6.Location = new Point(550, 399);
             label6.Name = "label6";
-            label6.Size = new Size(45, 15);
+            label6.Size = new Size(57, 20);
             label6.TabIndex = 18;
             label6.Text = "Địa Chỉ";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(481, 255);
+            label5.Location = new Point(550, 340);
             label5.Name = "label5";
-            label5.Size = new Size(36, 15);
+            label5.Size = new Size(46, 20);
             label5.TabIndex = 17;
             label5.Text = "Email";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(481, 210);
+            label4.Location = new Point(550, 280);
             label4.Name = "label4";
-            label4.Size = new Size(61, 15);
+            label4.Size = new Size(76, 20);
             label4.TabIndex = 16;
             label4.Text = "Ngày Sinh";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(481, 166);
+            label2.Location = new Point(550, 221);
             label2.Name = "label2";
-            label2.Size = new Size(54, 15);
+            label2.Size = new Size(68, 20);
             label2.TabIndex = 15;
             label2.Text = "Giới Tính";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(481, 121);
+            label1.Location = new Point(550, 161);
             label1.Name = "label1";
-            label1.Size = new Size(59, 15);
+            label1.Size = new Size(75, 20);
             label1.TabIndex = 14;
             label1.Text = "Họ và Tên";
             // 
@@ -249,36 +253,40 @@
             // 
             panel5.BackColor = Color.LightGray;
             panel5.Controls.Add(txtEmail);
-            panel5.Location = new Point(593, 246);
+            panel5.Location = new Point(678, 328);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(227, 28);
+            panel5.Size = new Size(259, 37);
             panel5.TabIndex = 9;
             // 
             // txtEmail
             // 
             txtEmail.BackColor = Color.LightGray;
             txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Location = new Point(22, 9);
+            txtEmail.Location = new Point(25, 12);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(182, 16);
+            txtEmail.Size = new Size(208, 20);
             txtEmail.TabIndex = 4;
             // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
             panel6.Controls.Add(txtPassword);
-            panel6.Location = new Point(593, 335);
+            panel6.Location = new Point(678, 447);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(227, 28);
+            panel6.Size = new Size(259, 37);
             panel6.TabIndex = 10;
             // 
             // txtPassword
             // 
             txtPassword.BackColor = Color.LightGray;
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Location = new Point(22, 9);
+            txtPassword.Location = new Point(25, 12);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(182, 16);
+            txtPassword.Size = new Size(208, 20);
             txtPassword.TabIndex = 4;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -286,80 +294,89 @@
             // 
             panel4.BackColor = Color.LightGray;
             panel4.Controls.Add(txtNgaySinh);
-            panel4.Location = new Point(593, 201);
+            panel4.Location = new Point(678, 268);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(227, 28);
+            panel4.Size = new Size(259, 37);
             panel4.TabIndex = 8;
             // 
             // txtNgaySinh
             // 
             txtNgaySinh.BackColor = Color.LightGray;
             txtNgaySinh.BorderStyle = BorderStyle.None;
-            txtNgaySinh.Location = new Point(22, 9);
+            txtNgaySinh.Location = new Point(25, 12);
+            txtNgaySinh.Margin = new Padding(3, 4, 3, 4);
             txtNgaySinh.Name = "txtNgaySinh";
-            txtNgaySinh.Size = new Size(182, 16);
+            txtNgaySinh.Size = new Size(208, 20);
             txtNgaySinh.TabIndex = 4;
             // 
             // panel7
             // 
             panel7.BackColor = Color.LightGray;
             panel7.Controls.Add(txtDiaChi);
-            panel7.Location = new Point(593, 290);
+            panel7.Location = new Point(678, 387);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(227, 28);
+            panel7.Size = new Size(259, 37);
             panel7.TabIndex = 11;
             // 
             // txtDiaChi
             // 
             txtDiaChi.BackColor = Color.LightGray;
             txtDiaChi.BorderStyle = BorderStyle.None;
-            txtDiaChi.Location = new Point(22, 9);
+            txtDiaChi.Location = new Point(25, 12);
+            txtDiaChi.Margin = new Padding(3, 4, 3, 4);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(182, 16);
+            txtDiaChi.Size = new Size(208, 20);
             txtDiaChi.TabIndex = 4;
             // 
             // panel3
             // 
             panel3.BackColor = Color.LightGray;
             panel3.Controls.Add(txtGioiTinh);
-            panel3.Location = new Point(593, 156);
+            panel3.Location = new Point(678, 208);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(227, 28);
+            panel3.Size = new Size(259, 37);
             panel3.TabIndex = 8;
             // 
             // txtGioiTinh
             // 
             txtGioiTinh.BackColor = Color.LightGray;
             txtGioiTinh.BorderStyle = BorderStyle.None;
-            txtGioiTinh.Location = new Point(22, 9);
+            txtGioiTinh.Location = new Point(25, 12);
+            txtGioiTinh.Margin = new Padding(3, 4, 3, 4);
             txtGioiTinh.Name = "txtGioiTinh";
-            txtGioiTinh.Size = new Size(182, 16);
+            txtGioiTinh.Size = new Size(208, 20);
             txtGioiTinh.TabIndex = 4;
             // 
             // panel2
             // 
             panel2.BackColor = Color.LightGray;
             panel2.Controls.Add(txtHoTen);
-            panel2.Location = new Point(593, 112);
+            panel2.Location = new Point(678, 149);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(227, 28);
+            panel2.Size = new Size(259, 37);
             panel2.TabIndex = 7;
             // 
             // txtHoTen
             // 
             txtHoTen.BackColor = Color.LightGray;
             txtHoTen.BorderStyle = BorderStyle.None;
-            txtHoTen.Location = new Point(22, 9);
+            txtHoTen.Location = new Point(25, 12);
+            txtHoTen.Margin = new Padding(3, 4, 3, 4);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(182, 16);
+            txtHoTen.Size = new Size(208, 20);
             txtHoTen.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-2, -39);
+            pictureBox1.Location = new Point(-2, -52);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(575, 565);
+            pictureBox1.Size = new Size(712, 753);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -401,12 +418,13 @@
             // 
             // Dangky
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(865, 492);
+            ClientSize = new Size(989, 656);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Dangky";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dang Ky";

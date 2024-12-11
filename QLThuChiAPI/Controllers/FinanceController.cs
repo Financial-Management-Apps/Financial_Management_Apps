@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using FrmManhinhchinh.Connection;
-using FrmManhinhchinh.Data;
-using FrmManhinhchinh.Model.Command;
-using FrmManhinhchinh.Model.DTO;
-using System.Collections.Generic;
-using static FrmManhinhchinh.Data.Connect;
-using System.Data.SqlClient;
 using Newtonsoft.Json;
+using QLThuChiAPI.Connection;
+using QLThuChiAPI.Data;
+using QLThuChiAPI.Model.DTO;
+using QLThuChiAPI.Model.Command;
+using static QLThuChiAPI.Data.Connect;
 
 namespace QLThuChiAPI.Controllers
 {
@@ -70,7 +68,7 @@ namespace QLThuChiAPI.Controllers
 
         // NguoiDung Methods
         [HttpPost("NguoiDung")]
-        public ActionResult<List<FrmManhinhchinh.Data.NguoiDung>> GetAllNguoiDung([FromBody] Dictionary<string, object> data)
+        public ActionResult<List<QLThuChiAPI.Data.NguoiDung>> GetAllNguoiDung([FromBody] Dictionary<string, object> data)
         {
             if (!data.TryGetValue("emailInput", out var emailInput) || !data.TryGetValue("passwordInput", out var passwordInput))
             {
@@ -92,8 +90,8 @@ namespace QLThuChiAPI.Controllers
             string password = data["Password"].ToString();
             string confirmPassword = data["confirmPassword"].ToString();
 
-            _connect.RegisterUser(hoTen, gioiTinh, ngaySinh, email, diaChi, password, confirmPassword);
-            return Ok();
+            string a = _connect.RegisterUser(hoTen, gioiTinh, ngaySinh, email, diaChi, password, confirmPassword);
+            return Ok(a);
         }
 
         // Thu Methods
@@ -113,4 +111,4 @@ namespace QLThuChiAPI.Controllers
             return _connect.GetTotalExpenseByCategory();
         }
     }
-} 
+}

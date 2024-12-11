@@ -18,8 +18,7 @@ namespace FrmManhinhchinh
 
         SqlConnection connection;
         SqlCommand command;
-        string connectionString = "Data Source=LAPTOP-H2SUB5OD\\SQLEXPRESS;Initial Catalog=QLCT03;"
-             + "Integrated Security=True;Encrypt=False";
+        string connectionString = "user id=Hoanron_SQLLogin_1;pwd=op1esplwlp;data source=QLCT003.mssql.somee.com;initial catalog=QLCT003;TrustServerCertificate=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
