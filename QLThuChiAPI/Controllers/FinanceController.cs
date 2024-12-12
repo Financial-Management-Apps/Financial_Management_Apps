@@ -68,10 +68,7 @@ namespace QLThuChiAPI.Controllers
 
         // NguoiDung Methods
         [HttpGet("GetAllUsers")]
-        [SwaggerOperation(Summary = "Get all users", Description = "Trả về danh sách tất cả người dùng từ cơ sở dữ liệu.")]
-        [SwaggerResponse(200, "Thành công", typeof(List<FrmManhinhchinh.Data.NguoiDung>))]
-        [SwaggerResponse(500, "Lỗi server")]
-        public ActionResult<List<FrmManhinhchinh.Data.NguoiDung>> GetAllUsers()
+        public ActionResult<List<QLThuChiAPI.Data.NguoiDung>> GetAllUsers()
         {
             try
             {
