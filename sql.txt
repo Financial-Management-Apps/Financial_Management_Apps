@@ -1,0 +1,207 @@
+CREATE DATABASE QLCT03
+USE QLCT03
+GO
+
+CREATE TABLE [dbo].[ChiTieu](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[NDID] [int] NOT NULL,
+	[LoaiID] [int] NULL,
+	[ThoiGian] [date] NOT NULL,
+	[GhiChu] [nvarchar](1024) NULL,
+	[SoTien] [int] NOT NULL,
+	[DanhMucID] [int] NOT NULL
+)
+SET IDENTITY_INSERT [dbo].[ChiTieu] ON
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (1, 1, 1, '2024-01-01', N'Mua sắm quần áo', 500, 4);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (2, 2, 2, '2024-01-02', N'Tiền điện', 300, 6);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (3, 3, 1, '2024-01-03', N'Ăn uống ngoài', 200, 2);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (4, 4, 2, '2024-01-04', N'Mua sách học', 150, 4);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (5, 5, 2, '2024-01-05', N'Chi phí đi lại', 400, 1);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (6, 1, 1, '2024-01-06', N'Dịch vụ internet', 250, 6);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (7, 2, 1, '2024-01-07', N'Quà tặng', 700, 3);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (8, 3, 2, '2024-01-08', N'Khám bệnh', 1200, 7);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (9, 4, 2, '2024-01-09', N'Mua dụng cụ học tập', 350, 4);
+INSERT INTO [dbo].[ChiTieu] ([ID], [NDID], [LoaiID], [ThoiGian], [GhiChu], [SoTien], [DanhMucID]) 
+VALUES (10, 5, 1, '2024-01-10', N'Tham gia lớp học thêm', 500, 4);
+SET IDENTITY_INSERT [dbo].[ChiTieu] OFF
+
+GO
+
+CREATE TABLE [dbo].[DanhMuc](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](255) NULL,
+)
+
+SET IDENTITY_INSERT [dbo].[DanhMuc] ON
+INSERT [dbo].[DanhMuc] ([ID], [Name] ) VALUES (1,'Đi lại')
+INSERT [dbo].[DanhMuc] ([ID], [Name]) VALUES (2,'Ăn uống')
+INSERT [dbo].[DanhMuc] ([ID], [Name] ) VALUES (3,'Bạn bè')
+INSERT [dbo].[DanhMuc] ([ID], [Name]) VALUES (4,'Mua sắm')
+INSERT [dbo].[DanhMuc] ([ID], [Name] ) VALUES (5,'Tiền phòng')
+INSERT [dbo].[DanhMuc] ([ID], [Name]) VALUES (6,'Tiền điện')
+INSERT [dbo].[DanhMuc] ([ID], [Name]) VALUES (7,'Tiền nước')
+INSERT [dbo].[DanhMuc] ([ID], [Name]) VALUES (8,'Lương')
+SET IDENTITY_INSERT [dbo].[DanhMuc] OFF
+
+GO
+
+CREATE TABLE [dbo].[Loai](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](255) NULL,
+)
+
+SET IDENTITY_INSERT [dbo].[Loai] ON
+INSERT [dbo].[Loai] ([ID], [Name] ) VALUES (1,'Thu nhập')
+INSERT [dbo].[Loai] ([ID], [Name]) VALUES (2,'Chi tiêu')
+SET IDENTITY_INSERT [dbo].[Loai] OFF
+
+/****** Object:  Table [dbo].[NguoiDung]    Script Date: 4/17/2024 2:28:44 PM ******/
+
+GO
+CREATE TABLE [dbo].[NguoiDung](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[HoTen] [nvarchar](50) NOT NULL,
+	[GioiTinh] [nvarchar](10) NOT NULL,
+	[NgaySinh] [date] NULL,
+	[Email] [varchar](50) NOT NULL,
+	[DiaChi] [nvarchar](1024) NULL,
+	[Password] [varchar](50) NOT NULL,
+	[Vi] int null
+)
+
+SET IDENTITY_INSERT [dbo].[NguoiDung] ON
+
+INSERT INTO [dbo].[NguoiDung] ([ID], [HoTen], [GioiTinh], [NgaySinh], [Email], [DiaChi], [Password], [Vi]) 
+VALUES (1, N'Nguyễn Văn A', N'Nam', '1990-01-01', 'nguyenvana@example.com', N'Hà Nội', 'password123', 1000);
+INSERT INTO [dbo].[NguoiDung] ([ID], [HoTen], [GioiTinh], [NgaySinh], [Email], [DiaChi], [Password], [Vi]) 
+VALUES (2, N'Trần Thị B', N'Nữ', '1995-02-02', 'tranthib@example.com', N'Hồ Chí Minh', 'password123', 1500);
+INSERT INTO [dbo].[NguoiDung] ([ID], [HoTen], [GioiTinh], [NgaySinh], [Email], [DiaChi], [Password], [Vi]) 
+VALUES (3, N'Lê Văn C', N'Nam', '1985-03-03', 'levanc@example.com', N'Đà Nẵng', 'password123', 2000);
+INSERT INTO [dbo].[NguoiDung] ([ID], [HoTen], [GioiTinh], [NgaySinh], [Email], [DiaChi], [Password], [Vi]) 
+VALUES (4, N'Hoàng Thị D', N'Nữ', '2000-04-04', 'hoangthid@example.com', N'Cần Thơ', 'password123', 1200);
+INSERT INTO [dbo].[NguoiDung] ([ID], [HoTen], [GioiTinh], [NgaySinh], [Email], [DiaChi], [Password], [Vi]) 
+VALUES (5, N'Phạm Văn E', N'Nam', '1992-05-05', 'phamvane@example.com', N'Hải Phòng', 'password123', 800);
+SET IDENTITY_INSERT [dbo].[NguoiDung] OFF
+
+
+GO
+-- Create the Notifications table
+CREATE TABLE [dbo].[Notifications] (
+    notification_id INT IDENTITY(1,1) PRIMARY KEY, 
+    user_id INT NOT NULL,                         
+    message NVARCHAR(1024) NULL,                 
+    is_read BIT DEFAULT 0,                       
+    created_at DATETIME DEFAULT GETDATE()        
+);
+-- Insert data into Notifications
+SET IDENTITY_INSERT [dbo].[Notifications] ON
+INSERT INTO [dbo].[Notifications] ([notification_id], [user_id], [message], [is_read], [created_at]) 
+VALUES (1, 1, N'Bạn có một thông báo mới!', 0, '2024-01-01 08:00:00');
+INSERT INTO [dbo].[Notifications] ([notification_id], [user_id], [message], [is_read], [created_at]) 
+VALUES (2, 2, N'Nhắc nhở: Hoàn thành mục tiêu tiết kiệm!', 0, '2024-01-02 09:00:00');
+INSERT INTO [dbo].[Notifications] ([notification_id], [user_id], [message], [is_read], [created_at]) 
+VALUES (3, 3, N'Bạn đã đạt được mục tiêu tiết kiệm!', 1, '2024-01-03 10:00:00');
+INSERT INTO [dbo].[Notifications] ([notification_id], [user_id], [message], [is_read], [created_at]) 
+VALUES (4, 4, N'Chúc mừng sinh nhật! Hãy kiểm tra mục tiêu mới.', 0, '2024-01-04 11:00:00');
+INSERT INTO [dbo].[Notifications] ([notification_id], [user_id], [message], [is_read], [created_at]) 
+VALUES (5, 5, N'Đừng quên tiết kiệm cho kế hoạch du lịch!', 0, '2024-01-05 12:00:00');
+
+SET IDENTITY_INSERT [dbo].[Notifications] OFF
+
+
+-- Tạo bảng Savings_Goals
+CREATE TABLE [dbo].[Savings_Goals] (
+    goal_id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT NOT NULL,
+    goal_name NVARCHAR(50) NOT NULL,
+    target_amount DECIMAL(18,2) NOT NULL,
+    current_amount DECIMAL(18,2) DEFAULT 0,
+    due_date DATE NULL,
+    created_at DATETIME DEFAULT GETDATE()
+);
+
+SET IDENTITY_INSERT [dbo].[Savings_Goals] ON
+
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(1, 1, N'Tiết kiệm mua xe', 200000000, 50000000, '2025-01-01', '2024-01-01 08:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(2, 1, N'Tiết kiệm du lịch', 50000000, 20000000, '2024-12-31', '2024-02-01 09:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(3, 2, N'Tiết kiệm học phí', 10000000, 7000000, '2024-09-01', '2024-03-01 10:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(4, 3, N'Tiết kiệm sửa nhà', 300000000, 150000000, '2025-06-01', '2024-04-01 11:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(5, 4, N'Tiết kiệm mua điện thoại', 20000000, 5000000, '2024-10-01', '2024-05-01 12:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(6, 5, N'Tiết kiệm đám cưới', 150000000, 100000000, '2025-12-01', '2024-06-01 13:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(7, 1, N'Tiết kiệm học ngoại ngữ', 3000000, 2000000, '2024-07-01', '2024-07-01 14:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(8, 2, N'Tiết kiệm mua sách', 1000000, 500000, '2024-08-01', '2024-08-01 15:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(9, 3, N'Tiết kiệm chăm sóc sức khỏe', 5000000, 2500000, '2024-11-01', '2024-09-01 16:00:00');
+INSERT INTO [dbo].[Savings_Goals] 
+([goal_id], [user_id], [goal_name], [target_amount], [current_amount], [due_date], [created_at]) 
+VALUES 
+(10, 4, N'Tiết kiệm mua nội thất', 20000000, 15000000, '2024-12-01', '2024-10-01 17:00:00');
+SET IDENTITY_INSERT [dbo].[Savings_Goals] OFF
+
+
+-- Add Primary Keys
+ALTER TABLE [dbo].[ChiTieu]
+ADD CONSTRAINT [PK_ChiTieu] PRIMARY KEY ([ID]);
+
+ALTER TABLE [dbo].[DanhMuc]
+ADD CONSTRAINT [PK_DanhMuc] PRIMARY KEY ([ID]);
+
+ALTER TABLE [dbo].[Loai]
+ADD CONSTRAINT [PK_Loai] PRIMARY KEY ([ID]);
+
+ALTER TABLE [dbo].[NguoiDung]
+ADD CONSTRAINT [PK_NguoiDung] PRIMARY KEY ([ID]);
+
+-- Add Foreign Keys
+ALTER TABLE [dbo].[Notifications]
+ADD CONSTRAINT [FK_Notifications_NguoiDung] FOREIGN KEY (user_id) REFERENCES [dbo].[NguoiDung] (ID);
+GO
+ALTER TABLE [dbo].[ChiTieu]
+ADD CONSTRAINT [FK_ChiTieu_NguoiDung] FOREIGN KEY ([NDID]) REFERENCES [dbo].[NguoiDung] ([ID]);
+
+ALTER TABLE [dbo].[ChiTieu]
+ADD CONSTRAINT [FK_ChiTieu_Loai] FOREIGN KEY ([LoaiID]) REFERENCES [dbo].[Loai] ([ID]);
+
+ALTER TABLE [dbo].[ChiTieu]
+ADD CONSTRAINT [FK_ChiTieu_DanhMuc] FOREIGN KEY ([DanhMucID]) REFERENCES [dbo].[DanhMuc] ([ID]);
+
+ALTER TABLE [dbo].[NguoiDung] ADD CONSTRAINT [DF_NguoiDung_Vi]  DEFAULT ((0)) FOR [Vi]
+GO
+ALTER TABLE [dbo].[Savings_Goals]
+ADD CONSTRAINT FK_Savings_Goals_NguoiDung FOREIGN KEY (user_id) REFERENCES [dbo].[NguoiDung] (ID);
+GO

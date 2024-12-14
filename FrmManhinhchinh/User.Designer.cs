@@ -71,8 +71,8 @@
             bunifuThinButton21.ActiveLineColor = Color.FromArgb(255, 255, 128);
             bunifuThinButton21.BackColor = Color.White;
             bunifuThinButton21.BackgroundImage = (Image)resources.GetObject("bunifuThinButton21.BackgroundImage");
-            bunifuThinButton21.ButtonText = "Gợi ý chi tiêu";
-            bunifuThinButton21.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bunifuThinButton21.ButtonText = "Nhìn lại chi tiêu";
+            bunifuThinButton21.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bunifuThinButton21.ForeColor = Color.White;
             bunifuThinButton21.IdleBorderThickness = 1;
             bunifuThinButton21.IdleCornerRadius = 20;

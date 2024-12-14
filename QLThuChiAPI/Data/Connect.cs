@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using QLThuChiAPI.Utils;
 using System.Data.SqlClient;
-using FrmManhinhchinh.Utils; 
+using System.Text;
 
 
-namespace FrmManhinhchinh.Data
+namespace QLThuChiAPI.Data
 {
     public enum IncomeType
     {
@@ -42,13 +39,11 @@ namespace FrmManhinhchinh.Data
             }
             return nguoidunglist;
         }
-        public void RegisterUser(string HoTen, string GioiTinh, DateTime NgaySinh, string Email, string DiaChi, string Password, string confirmPassword)
+        public string RegisterUser(string HoTen, string GioiTinh, DateTime NgaySinh, string Email, string DiaChi, string Password, string confirmPassword)
         {
             if (Password != confirmPassword)
             {
-                // Mật khẩu và xác nhận mật khẩu không khớp
-                MessageBox.Show("Mật khẩu và xác nhận mật khẩu không khớp.", "Thông Báo !");
-                
+                return "Mật khẩu và xác nhận mật khẩu không khớp.";
             }
 
             using (SqlConnection connection = GetConnection())
@@ -66,14 +61,8 @@ namespace FrmManhinhchinh.Data
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        // Đăng ký thành công, tiến hành mở trang đăng nhập
-                        Dangnhap dangnhap = new Dangnhap();
-                        dangnhap.Show();
-                        
-                    }
                 }
+                return "";
             }
         }
         public int GetTotalIncomeForCategory(int category, IncomeType incomeType)
@@ -119,6 +108,8 @@ namespace FrmManhinhchinh.Data
         public List<CategoryExpense> GetTotalExpenseByCategory()
         {
             List<CategoryExpense> expensesByCategory = new List<CategoryExpense>();
+
+
             using (SqlConnection connection = GetConnection())
             {
                 string query = "SELECT DanhMucID, SUM(SoTien) AS TotalExpense FROM ChiTieu WHERE NDID = @UserID GROUP BY DanhMucID";
@@ -133,6 +124,9 @@ namespace FrmManhinhchinh.Data
                         {
                             int category = reader.GetInt32(reader.GetOrdinal("DanhMucID"));
                             int totalExpense = reader.GetInt32(reader.GetOrdinal("TotalExpense"));
+                            
+                           
+                           
                             expensesByCategory.Add(new CategoryExpense(category, totalExpense));
                         }
                     }
@@ -142,4 +136,10 @@ namespace FrmManhinhchinh.Data
             return expensesByCategory;
         }
     }
-}
+    }
+
+
+
+
+
+

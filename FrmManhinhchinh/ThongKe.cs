@@ -56,8 +56,7 @@ namespace FrmManhinhchinh
         }
         public void ExportToExcel()
         {
-            string connectionString = "Data Source=DESKTOP-6DJ3LQS\\VINHPHU;Initial Catalog=QLCT03;"
-             + "Integrated Security=True;Encrypt=False";
+            string connectionString = "user id=Hoanron_SQLLogin_1;pwd=op1esplwlp;data source=QLCT003.mssql.somee.com;initial catalog=QLCT003;TrustServerCertificate=True";
 
             string query = "SELECT * FROM ChiTieu WHERE NDID = @UserID ";
 

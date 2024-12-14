@@ -15,42 +15,50 @@ namespace FrmManhinhchinh
 {
     public partial class tongquanthuchi : Form
     {
+
+
         SqlConnection connection;
         SqlCommand command;
-        string connectionString = "Data Source=DESKTOP-6DJ3LQS\\VINHPHU;Initial Catalog=QLCT03;"
-             + "Integrated Security=True;Encrypt=False";
+        string connectionString = "user id=Hoanron_SQLLogin_1;pwd=op1esplwlp;data source=QLCT003.mssql.somee.com;initial catalog=QLCT003;TrustServerCertificate=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
+
+
         public tongquanthuchi()
         {
             InitializeComponent();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 using (connection = new SqlConnection(connectionString))
                 {
+
                     connection.Open();
-                    string queryThu = "SELECT MONTH(ThoiGian) AS Thang, SUM(CASE WHEN LoaiID = 1  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY MONTH(ThoiGian)";
-                    string queryChi = "SELECT MONTH(ThoiGian) AS Thang, SUM(-CASE WHEN LoaiID = 2  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY MONTH(ThoiGian)";
+                    string queryThu = "SELECT DAY(ThoiGian) AS Thang, SUM(CASE WHEN LoaiID = 1  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY  DAY(ThoiGian)";
+                    string queryChi = "SELECT DAY(ThoiGian) AS Thang, SUM(-CASE WHEN LoaiID = 2  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY  DAY(ThoiGian)";
+
+
                     using (SqlCommand commandThu = new SqlCommand(queryThu, connection))
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
 
                         commandThu.Parameters.AddWithValue("@UserID", Constants.UserID);
                         commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
+
                         SqlDataAdapter adapterThu = new SqlDataAdapter(commandThu);
                         SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
                         DataTable tableThu = new DataTable();
                         DataTable tableChi = new DataTable();
                         adapterThu.Fill(tableThu);
                         adapterChi.Fill(tableChi);
-                        Series seriesThu = chart1.Series.Add("Tiền thu");
+                        Series seriesThu = chart1.Series.Add("Tien Thu");
                         seriesThu.Points.DataBind(tableThu.AsEnumerable(), "Thang", "SoTien", "");
                         seriesThu.ChartType = SeriesChartType.Line;
                         seriesThu.Color = Color.Blue;
-                        Series seriesChi = chart1.Series.Add("Tiền chi");
+                        Series seriesChi = chart1.Series.Add("Tien Chi");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Thang", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Red;
