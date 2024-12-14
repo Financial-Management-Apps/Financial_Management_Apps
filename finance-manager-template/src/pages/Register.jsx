@@ -1,22 +1,34 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { login } from '../redux/slices/authSlice';
-import { registerUser } from '../api/auth';
-import { Box, TextField, Button, Typography, Card, CardContent } from '@mui/material';
+import { register } from '../redux/slices/authSlice';
+import { toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+} from '@mui/material';
 
 const Register = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); // Điều hướng
+  const { loading, error } = useSelector((state) => state.auth);
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
+    HoTen: '',
+    GioiTinh: '',
+    NgaySinh: '',
+    Email: '',
+    DiaChi: '',
+    Password: '',
     confirmPassword: '',
   });
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const { name, email, password, confirmPassword } = formData;
 
   const handleChange = (e) => {
     setFormData({
@@ -27,85 +39,135 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
 
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
+    if (formData.Password !== formData.confirmPassword) {
+      toast.error('Mật khẩu không khớp!', {
+        autoClose: 1500,
+      }
+      );
       return;
     }
 
-    try {
-      const response = await registerUser({ name, email, password });
-      const { user, token } = response;
+    const result = await dispatch(register(formData));
+    if (register.fulfilled.match(result)) {
+      toast.success('Login successful! Redirecting to dashboard...', {
+        position: 'top-right',
+        autoClose: 1500,
+      });
 
-      // Lưu thông tin người dùng vào Redux
-      dispatch(login({ user, token }));
-
-      // Điều hướng người dùng tới Dashboard
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Something went wrong');
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000);
     }
   };
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Card sx={{ maxWidth: 400, width: '100%' }}>
-        <CardContent>
-          <Typography variant="h5" gutterBottom>
-            Register
-          </Typography>
-          {error && (
-            <Typography variant="body2" color="error" sx={{ marginBottom: 2 }}>
-              {error}
-            </Typography>
-          )}
-          <form onSubmit={handleSubmit}>
-            <TextField
-              label="Name"
-              name="name"
-              value={name}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <TextField
-              label="Email"
-              name="email"
-              type="email"
-              value={email}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <TextField
-              label="Password"
-              name="password"
-              type="password"
-              value={password}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <TextField
-              label="Confirm Password"
-              name="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-              required
-            />
-            <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
-              Register
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+    <Box
+      component="form"
+      sx={{
+        maxWidth: 400,
+        margin: '0 auto',
+        padding: 3,
+        boxShadow: 3,
+        borderRadius: 2,
+        mt: 5,
+      }}
+      onSubmit={handleSubmit}
+    >
+    <ToastContainer />
+
+      <Typography variant="h5" gutterBottom textAlign="center">
+        Đăng Ký
+      </Typography>
+      {error && (
+        <Typography color="error" variant="body2" sx={{ mb: 2 }}>
+          {error}
+        </Typography>
+      )}
+
+      <TextField
+        fullWidth
+        label="Họ Tên"
+        name="HoTen"
+        value={formData.HoTen}
+        onChange={handleChange}
+        variant="outlined"
+        margin="normal"
+      />
+      <FormControl fullWidth margin="normal">
+        <InputLabel>Giới Tính</InputLabel>
+        <Select
+          name="GioiTinh"
+          value={formData.GioiTinh}
+          onChange={handleChange}
+          label="Giới Tính"
+        >
+          <MenuItem value="Nam">Nam</MenuItem>
+          <MenuItem value="Nữ">Nữ</MenuItem>
+        </Select>
+      </FormControl>
+      <TextField
+        fullWidth
+        label="Ngày Sinh"
+        name="NgaySinh"
+        type="date"
+        value={formData.NgaySinh}
+        onChange={handleChange}
+        variant="outlined"
+        margin="normal"
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      <TextField
+        fullWidth
+        label="Email"
+        name="Email"
+        type="email"
+        value={formData.Email}
+        onChange={handleChange}
+        variant="outlined"
+        margin="normal"
+      />
+      <TextField
+        fullWidth
+        label="Địa Chỉ"
+        name="DiaChi"
+        value={formData.DiaChi}
+        onChange={handleChange}
+        variant="outlined"
+        margin="normal"
+      />
+      <TextField
+        fullWidth
+        label="Mật khẩu"
+        name="Password"
+        type="password"
+        value={formData.Password}
+        onChange={handleChange}
+        variant="outlined"
+        margin="normal"
+      />
+      <TextField
+        fullWidth
+        label="Nhập lại mật khẩu"
+        name="confirmPassword"
+        type="password"
+        value={formData.confirmPassword}
+        onChange={handleChange}
+        variant="outlined"
+        margin="normal"
+      />
+      <Button
+        fullWidth
+        variant="contained"
+        type="submit"
+        color="primary"
+        sx={{ mt: 2 }}
+        disabled={loading}
+      >
+        {loading ? 'Đang xử lý...' : 'Đăng Ký'}
+      </Button>
     </Box>
   );
 };

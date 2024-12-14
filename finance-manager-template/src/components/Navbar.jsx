@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
@@ -7,11 +6,12 @@ import { logout } from '../redux/slices/authSlice';
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/');
+    navigate('/login');
   };
 
   return (
@@ -22,17 +22,19 @@ const Navbar = () => {
             Financial App
           </Link>
         </Typography>
-        <Box>
-          <Button color="inherit" component={Link} to="/dashboard">
-            Dashboard
-          </Button>
-          {isAuthenticated ? (
-            <Button color="inherit" onClick={handleLogout}>
-              Logout
-            </Button>
+        <Box display="flex" alignItems="center">
+          {isAuthenticated && user ? (
+            <>
+              <Typography variant="body1" sx={{ marginRight: 2 }}>
+                Welcome, {user[0]?.HoTen}
+              </Typography>
+              <Button color="inherit" onClick={handleLogout}>
+                Logout
+              </Button>
+            </>
           ) : (
             <>
-              <Button color="inherit" component={Link} to="/">
+              <Button color="inherit" component={Link} to="/login">
                 Login
               </Button>
               <Button color="inherit" component={Link} to="/register">
