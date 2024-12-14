@@ -9,7 +9,7 @@ export const loginUser = async ({ emailInput, passwordInput }) => {
       emailInput,     // Đặt key là emailInput
       passwordInput,  // Đặt key là passwordInput
     });
-    console.log('Response from Backend:', response.data);
+    // console.log('Response from Backend:', response.data);
     return response.data;
   } catch (error) {
     throw new Error(error.response?.data?.message || 'Login API failed');
@@ -20,7 +20,7 @@ export const loginUser = async ({ emailInput, passwordInput }) => {
 export const registerUser = async (userDetails) => {
   try {
     const response = await axios.post(`${baseUrl}/api/Finance/TaiKhoan`, userDetails);
-    console.log('Register Response:', response.data); // Log dữ liệu trả về
+    // console.log('Register Response:', response.data);
     return response.data;
   } catch (error) {
     console.error('Register API Error:', error.response?.data || error.message);

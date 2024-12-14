@@ -8,7 +8,7 @@ export const login = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const data = await loginUser(credentials);
-      console.log('Data received in Thunk:', data); // Kiểm tra dữ liệu
+      // console.log('Data received in Thunk:', data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message || 'Login failed');
@@ -73,7 +73,7 @@ const authSlice = createSlice({
           state.user = null; // Xử lý trường hợp không có dữ liệu
         }
         state.isAuthenticated = !!state.user; // Cập nhật trạng thái đăng nhập
-        console.log('User stored in Redux:', state.user); // Log user trong store
+        // console.log('User stored in Redux:', state.user);
       })
       .addCase(login.rejected, (state, { payload }) => {
         state.loading = false;

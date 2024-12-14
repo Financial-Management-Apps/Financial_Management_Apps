@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Box,
   Typography,
@@ -23,12 +23,18 @@ const formatAmount = (amount) => {
 };
 
 const OverviewList = () => {
-  const transactions = generateFakeTransactions(100); // Fake 100 giao dịch
+  const [transactions, setTransactions] = useState([]); // Lưu giao dịch
   const [currentPage, setCurrentPage] = useState(1); // Trang hiện tại
   const [selectedTransaction, setSelectedTransaction] = useState(null); // Giao dịch được chọn
   const [categoryFilter, setCategoryFilter] = useState('all'); // Lọc theo loại
   const [dateOrder, setDateOrder] = useState('desc'); // Sắp xếp theo ngày
   const [amountType, setAmountType] = useState('all'); // Lọc theo số tiền
+
+  // Lấy dữ liệu fake chỉ một lần khi component được render lần đầu
+  useEffect(() => {
+    const fakeTransactions = generateFakeTransactions(100); // Fake 100 giao dịch
+    setTransactions(fakeTransactions); // Cập nhật vào state
+  }, []);  // [] đảm bảo chỉ chạy một lần khi component mount
 
   // Lọc và sắp xếp giao dịch
   const filteredTransactions = transactions
@@ -70,7 +76,7 @@ const OverviewList = () => {
       {/* Danh mục sắp xếp */}
       <Box sx={{ display: 'flex', gap: 2, marginBottom: 2 }}>
         {/* Lọc theo loại */}
-        <FormControl size="small" sx={{ minWidth: 200 }}>
+        <FormControl size="small" sx={{ minWidth: 150 }}>
           <InputLabel id="category-select-label">Lọc theo loại</InputLabel>
           <Select
             labelId="category-select-label"
@@ -89,7 +95,7 @@ const OverviewList = () => {
         </FormControl>
 
         {/* Sắp xếp theo ngày */}
-        <FormControl size="small" sx={{ minWidth: 200 }}>
+        <FormControl size="small" sx={{ minWidth: 150 }}>
           <InputLabel id="date-select-label">Sắp xếp theo ngày</InputLabel>
           <Select
             labelId="date-select-label"
@@ -106,7 +112,7 @@ const OverviewList = () => {
         </FormControl>
 
         {/* Lọc theo số tiền */}
-        <FormControl size="small" sx={{ minWidth: 200 }}>
+        <FormControl size="small" sx={{ minWidth: 150 }}>
           <InputLabel id="amount-select-label">Lọc theo số tiền</InputLabel>
           <Select
             labelId="amount-select-label"
@@ -124,7 +130,7 @@ const OverviewList = () => {
         </FormControl>
       </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, maxWidth: '99%', overflow: 'hidden' }}>
         {/* Danh sách giao dịch */}
         <Box sx={{ flex: 1 }}>
           <List>
