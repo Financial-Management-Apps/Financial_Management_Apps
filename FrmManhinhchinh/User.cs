@@ -57,6 +57,10 @@ namespace FrmManhinhchinh
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
             OpenChildForm(new MTTK(currentUser.ID), sender);
+        }
+
+        private void bunifuThinButton24_Click(object sender, EventArgs e)
+        {
             OpenChildForm(new GYCT2(), sender);
         }
     }
