@@ -100,6 +100,30 @@ namespace QLThuChiAPI.Controllers
             return _connect.NguoiDung(query);
         }
 
+        [HttpGet("GetAllUsers")]
+        [SwaggerOperation(Summary = "Get all users", Description = "Trả về danh sách tất cả người dùng từ cơ sở dữ liệu.")]
+        [SwaggerResponse(200, "Thành công", typeof(List<FrmManhinhchinh.Data.NguoiDung>))]
+        [SwaggerResponse(500, "Lỗi server")]
+        public ActionResult<List<FrmManhinhchinh.Data.NguoiDung>> GetAllUsers()
+        {
+            try
+            {
+                string query = "SELECT * FROM NguoiDung";
+                var result = _connect.NguoiDung(query);
+
+                if (result == null || result.Count == 0)
+                {
+                    return NotFound("No users found in the database.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
         [HttpPost("TaiKhoan")]
         public IActionResult AddNguoiDung([FromBody] Dictionary<string, object> data)
         {

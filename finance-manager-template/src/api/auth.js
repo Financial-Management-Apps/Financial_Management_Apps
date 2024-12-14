@@ -1,12 +1,29 @@
 import axios from 'axios';
 
-export const loginUser = async (email, password) => {
-  const response = await axios.post('/api/auth/login', { email, password });
-  return response.data;
+const baseUrl = import.meta.env.VITE_API_URL
+
+// Hàm gọi API đăng nhập
+export const loginUser = async ({ emailInput, passwordInput }) => {
+  try {
+    const response = await axios.post(`${baseUrl}/api/Finance/NguoiDung`, {
+      emailInput,     // Đặt key là emailInput
+      passwordInput,  // Đặt key là passwordInput
+    });
+    console.log('Response from Backend:', response.data);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Login API failed');
+  }
 };
 
-// Đăng ký tài khoản mới
-export const registerUser = async ({ name, email, password }) => {
-  const response = await axios.post('/api/auth/register', { name, email, password });
-  return response.data; // Trả về user và token
+// Hàm gọi API đăng ký
+export const registerUser = async (userDetails) => {
+  try {
+    const response = await axios.post(`${baseUrl}/api/Finance/TaiKhoan`, userDetails);
+    console.log('Register Response:', response.data); // Log dữ liệu trả về
+    return response.data;
+  } catch (error) {
+    console.error('Register API Error:', error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || 'Registration API failed');
+  }
 };
