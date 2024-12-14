@@ -39,6 +39,8 @@ namespace FrmManhinhchinh
             dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
             groupBox4 = new GroupBox();
+            rbNuoc = new RadioButton();
+            rbDien = new RadioButton();
             rbLuong = new RadioButton();
             rbTienPhong = new RadioButton();
             rbMuaSam = new RadioButton();
@@ -167,20 +169,48 @@ namespace FrmManhinhchinh
             // groupBox4
             // 
             groupBox4.BackColor = SystemColors.ButtonHighlight;
+            groupBox4.Controls.Add(rbNuoc);
+            groupBox4.Controls.Add(rbDien);
             groupBox4.Controls.Add(rbLuong);
             groupBox4.Controls.Add(rbTienPhong);
             groupBox4.Controls.Add(rbMuaSam);
             groupBox4.Controls.Add(rbBanBe);
             groupBox4.Controls.Add(rbAnUong);
             groupBox4.Controls.Add(rbDiLai);
-            groupBox4.Location = new Point(46, 195);
+            groupBox4.Location = new Point(46, 148);
             groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(3, 2, 3, 2);
-            groupBox4.Size = new Size(192, 216);
+            groupBox4.Size = new Size(192, 296);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "Danh Mục";
+            // 
+            // rbNuoc
+            // 
+            rbNuoc.AutoSize = true;
+            rbNuoc.Location = new Point(36, 244);
+            rbNuoc.Margin = new Padding(3, 2, 3, 2);
+            rbNuoc.Name = "rbNuoc";
+            rbNuoc.Size = new Size(104, 25);
+            rbNuoc.TabIndex = 6;
+            rbNuoc.TabStop = true;
+            rbNuoc.Tag = "7";
+            rbNuoc.Text = "Tiền nước";
+            rbNuoc.UseVisualStyleBackColor = true;
+            // 
+            // rbDien
+            // 
+            rbDien.AutoSize = true;
+            rbDien.Location = new Point(35, 215);
+            rbDien.Margin = new Padding(3, 2, 3, 2);
+            rbDien.Name = "rbDien";
+            rbDien.Size = new Size(99, 25);
+            rbDien.TabIndex = 5;
+            rbDien.TabStop = true;
+            rbDien.Tag = "6";
+            rbDien.Text = "Tiền điện";
+            rbDien.UseVisualStyleBackColor = true;
             // 
             // rbLuong
             // 
@@ -191,7 +221,7 @@ namespace FrmManhinhchinh
             rbLuong.Size = new Size(77, 25);
             rbLuong.TabIndex = 4;
             rbLuong.TabStop = true;
-            rbLuong.Tag = "6";
+            rbLuong.Tag = "8";
             rbLuong.Text = "Lương";
             rbLuong.UseVisualStyleBackColor = true;
             // 
@@ -201,11 +231,11 @@ namespace FrmManhinhchinh
             rbTienPhong.Location = new Point(36, 115);
             rbTienPhong.Margin = new Padding(3, 2, 3, 2);
             rbTienPhong.Name = "rbTienPhong";
-            rbTienPhong.Size = new Size(115, 25);
+            rbTienPhong.Size = new Size(151, 25);
             rbTienPhong.TabIndex = 1;
             rbTienPhong.TabStop = true;
             rbTienPhong.Tag = "5";
-            rbTienPhong.Text = "Tiền Phòng";
+            rbTienPhong.Text = "Tiền nhà/phòng";
             rbTienPhong.UseVisualStyleBackColor = true;
             // 
             // rbMuaSam
@@ -250,7 +280,7 @@ namespace FrmManhinhchinh
             // rbDiLai
             // 
             rbDiLai.AutoSize = true;
-            rbDiLai.Location = new Point(35, 173);
+            rbDiLai.Location = new Point(35, 178);
             rbDiLai.Margin = new Padding(3, 2, 3, 2);
             rbDiLai.Name = "rbDiLai";
             rbDiLai.Size = new Size(123, 25);
@@ -379,5 +409,7 @@ namespace FrmManhinhchinh
         private RadioButton rbThuNhap;
         private Button btnOK;
         private RadioButton rbLuong;
+        private RadioButton rbNuoc;
+        private RadioButton rbDien;
     }
 }

@@ -1,4 +1,4 @@
-using FrmManhinhchinh.Connection;
+﻿using FrmManhinhchinh.Connection;
 using FrmManhinhchinh.Model.Command;
 using FrmManhinhchinh.Model.DTO;
 using FrmManhinhchinh.Utils;
@@ -34,25 +34,25 @@ namespace FrmManhinhchinh
             try
             {
                 if (!rbDiLai.Checked && !rbAnUong.Checked && !rbBanBe.Checked &&
-        !rbMuaSam.Checked && !rbTienPhong.Checked && !rbLuong.Checked)
+        !rbMuaSam.Checked && !rbTienPhong.Checked && !rbLuong.Checked && !rbNuoc.Checked && !rbDien.Checked)
                 {
-                    MessageBox.Show("Vui long chon danh muc chi tieu.");
+                    MessageBox.Show("Vui lòng chọn danh mục chi tiêu.");
                     return;
                 }
 
                 if (!rbThuNhap.Checked && !rbChiTieu.Checked)
                 {
-                    MessageBox.Show("Vui long chon loai chi tieu.");
+                    MessageBox.Show("Vui lòng chọn loại chi tiêu.");
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtTien.Text) || !int.TryParse(txtTien.Text, out int soTien))
                 {
-                    MessageBox.Show("Vui long nhap so tien hop le.");
+                    MessageBox.Show("Vui lòng nhập số tiền hợp lệ.");
                     return;
                 }
                 if (string.IsNullOrEmpty(txtGhiChu.Text))
                 {
-                    MessageBox.Show("Vui long nhap ghi chu.");
+                    MessageBox.Show("Vui lòng nhập ghi chú.");
                     return;
                 }
 
@@ -90,6 +90,14 @@ namespace FrmManhinhchinh
                     chiTieuCreate.DanhMucID = Convert.ToInt32(rbTienPhong.Tag);
                     //chiTieuCreate.DanhMuc = rbTienDienNuoc.Text;
                 }
+                else if(rbDien.Checked)
+                {
+                    chiTieuCreate.DanhMucID = Convert.ToInt32(rbDien.Tag);
+                }
+                else if (rbNuoc.Checked)
+                {
+                    chiTieuCreate.DanhMucID = Convert.ToInt32(rbNuoc.Tag);
+                }
                 else if (rbLuong.Checked)
                 {
                     chiTieuCreate.DanhMucID = Convert.ToInt32(rbLuong.Tag);
@@ -123,6 +131,8 @@ namespace FrmManhinhchinh
                 rbMuaSam.Checked = false;
                 rbTienPhong.Checked = false;
                 rbLuong.Checked = false;
+                rbDien.Checked = false;
+                rbNuoc.Checked = false; 
             }
         }
 

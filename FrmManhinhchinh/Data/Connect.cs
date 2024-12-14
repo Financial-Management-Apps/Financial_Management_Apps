@@ -120,8 +120,6 @@ namespace FrmManhinhchinh.Data
         public List<CategoryExpense> GetTotalExpenseByCategory()
         {
             List<CategoryExpense> expensesByCategory = new List<CategoryExpense>();
-
-
             using (SqlConnection connection = GetConnection())
             {
                 string query = "SELECT DanhMucID, SUM(SoTien) AS TotalExpense FROM ChiTieu WHERE NDID = @UserID GROUP BY DanhMucID";
@@ -136,9 +134,6 @@ namespace FrmManhinhchinh.Data
                         {
                             int category = reader.GetInt32(reader.GetOrdinal("DanhMucID"));
                             int totalExpense = reader.GetInt32(reader.GetOrdinal("TotalExpense"));
-                            
-                           
-                           
                             expensesByCategory.Add(new CategoryExpense(category, totalExpense));
                         }
                     }
@@ -148,10 +143,4 @@ namespace FrmManhinhchinh.Data
             return expensesByCategory;
         }
     }
-    }
-
-
-
-
-
-
+}

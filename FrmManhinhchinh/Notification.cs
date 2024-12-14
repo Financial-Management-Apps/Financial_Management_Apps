@@ -13,11 +13,12 @@ namespace FrmManhinhchinh
     public partial class Notification : Form
     {
         private QLCTDAO con;
-      
-        private int currentUserId = 1;
-        public Notification()
+
+        private int currentUserId = -1;
+        public Notification(int currentUserId)
         {
             InitializeComponent();
+            this.currentUserId = currentUserId;
             con = new QLCTDAO();
         }
         private void Notification_Load(object sender, EventArgs e)
@@ -33,91 +34,54 @@ namespace FrmManhinhchinh
             dgvNotifications.Columns.Add("CreatedAt", "Thời gian");
             dgvNotifications.Columns.Add("IsRead", "Trạng thái");
         }
-
         private void LoadNotifications()
         {
-            var notifications = con.GetNotifications(1);  
-
-            dgvNotifications.Rows.Clear(); 
-
+            var notifications = con.GetNotifications(currentUserId);
+            dgvNotifications.Rows.Clear();
             foreach (var notification in notifications)
             {
-                // Kiểm tra dữ liệu trước khi thêm
                 if (notification != null)
                 {
                     dgvNotifications.Rows.Add(
-                        notification.NotificationId,                          
-                        notification.Message,                                
-                        notification.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss"), 
-                        notification.IsRead ? "Đã xong" : "Chưa xong"           
+                        notification.NotificationId,
+                        notification.Message,
+                        notification.CreatedAt.ToString("dd-MM-yyyy HH:mm:ss"),
+                        notification.IsRead ? "Đã xong" : "Chưa xong"
                     );
                 }
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            var notification = new ModelTB.DTO.Notification
-            {
-                UserId = 1,  // ID của người dùng, bạn có thể thay đổi nếu cần
-                Message = txtMessage.Text,
-                IsRead = false,
-                CreatedAt = DateTime.Now
-            };
-
-            con.AddNotification(notification);  // Thêm thông báo vào cơ sở dữ liệu
-            LoadNotifications();  // Tải lại danh sách thông báo vào DataGridView
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (dgvNotifications.SelectedRows.Count > 0)
             {
-                // Lấy ID của thông báo từ dòng được chọn
                 var notificationId = (int)dgvNotifications.SelectedRows[0].Cells[0].Value;
-
-                con.DeleteNotification(notificationId);  // Xóa thông báo khỏi cơ sở dữ liệu
-                LoadNotifications();  // Tải lại danh sách thông báo vào DataGridView
+                con.MarkAsRead(notificationId);
+                LoadNotifications();
             }
         }
-        private void btnEdit_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
             if (dgvNotifications.SelectedRows.Count > 0)
             {
-                // Lấy ID của thông báo được chọn
-                int selectedNotificationId = (int)dgvNotifications.SelectedRows[0].Cells[0].Value;
-
-                // Tạo đối tượng Notification mới với thông tin đã sửa từ TextBox
-                var updatedNotification = new ModelTB.DTO.Notification
-                {
-                    NotificationId = selectedNotificationId,
-                    Message = txtMessage.Text,
-                    IsRead = false,  // Bạn có thể điều chỉnh lại giá trị này nếu cần
-                    CreatedAt = DateTime.Now  // Hoặc bạn có thể giữ nguyên thời gian cũ nếu cần
-                };
-
-                // Gọi phương thức để cập nhật thông báo vào cơ sở dữ liệu
-                con.UpdateNotification(updatedNotification);
-
-                // Làm mới danh sách thông báo trong DataGridView
+                var notificationId = (int)dgvNotifications.SelectedRows[0].Cells[0].Value;
+                con.DeleteNotification(notificationId);
                 LoadNotifications();
+            }
+        }
 
-                // Hiển thị thông báo thành công
-                MessageBox.Show("Cập nhật thông báo thành công!");
+        private void dgvNotifications_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvNotifications.SelectedRows.Count > 0)
+            {
+                var selectedRow = dgvNotifications.SelectedRows[0];
+                var notificationContent = selectedRow.Cells["message"].Value?.ToString(); 
+                txtMessage.Text = notificationContent;
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn thông báo để cập nhật.");
-            }
-        }
-        // Đánh dấu thông báo đã đọc
-        private void btnMarkAsRead_Click(object sender, EventArgs e)
-        {
-            if (dgvNotifications.SelectedRows.Count > 0)
-            {
-                // Lấy ID của thông báo từ dòng được chọn
-                var notificationId = (int)dgvNotifications.SelectedRows[0].Cells[0].Value;
-
-                con.MarkAsRead(notificationId);  // Đánh dấu thông báo là đã đọc trong cơ sở dữ liệu
-                LoadNotifications();  // Tải lại danh sách thông báo vào DataGridView
+                txtMessage.Text = string.Empty; 
             }
         }
     }

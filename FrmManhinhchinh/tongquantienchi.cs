@@ -15,19 +15,16 @@ namespace FrmManhinhchinh
 {
     public partial class tongquantienchi : Form
     {
-
         SqlConnection connection;
         SqlCommand command;
         string connectionString = "Data Source=DESKTOP-6DJ3LQS\\VINHPHU;Initial Catalog=QLCT03;"
              + "Integrated Security=True;Encrypt=False";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
-
         public tongquantienchi()
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -45,7 +42,7 @@ namespace FrmManhinhchinh
                         SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
                         DataTable tableChi = new DataTable();
                         adapterChi.Fill(tableChi);
-                        Series seriesChi = chart1.Series.Add("Mua Sắm");
+                        Series seriesChi = chart1.Series.Add("Mua sắm");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Red;
@@ -72,7 +69,7 @@ namespace FrmManhinhchinh
                         SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
                         DataTable tableChi = new DataTable();
                         adapterChi.Fill(tableChi);
-                        Series seriesChi = chart1.Series.Add("Ăn Uống");
+                        Series seriesChi = chart1.Series.Add("Ăn uống");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Blue;
@@ -101,7 +98,7 @@ namespace FrmManhinhchinh
                         SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
                         DataTable tableChi = new DataTable();
                         adapterChi.Fill(tableChi);
-                        Series seriesChi = chart1.Series.Add("Bạn Bè");
+                        Series seriesChi = chart1.Series.Add("Bạn bè");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Orange;
@@ -129,7 +126,7 @@ namespace FrmManhinhchinh
                         SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
                         DataTable tableChi = new DataTable();
                         adapterChi.Fill(tableChi);
-                        Series seriesChi = chart1.Series.Add("Đi Lại");
+                        Series seriesChi = chart1.Series.Add("Phương tiện");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Green;
@@ -156,7 +153,61 @@ namespace FrmManhinhchinh
                         SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
                         DataTable tableChi = new DataTable();
                         adapterChi.Fill(tableChi);
-                        Series seriesChi = chart1.Series.Add("Tiền Phòng");
+                        Series seriesChi = chart1.Series.Add("Tiền nhà/phòng");
+                        seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
+                        seriesChi.ChartType = SeriesChartType.Line;
+                        seriesChi.Color = Color.Black;
+                        chart1.DataBind();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                using (connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
+                                        "FROM ChiTieu " +
+                                        "WHERE DanhMucID = '6' AND LoaiID = '2' AND NDID = @UserID " +
+                                         "GROUP BY DAY(ThoiGian)";
+                    using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
+                    {
+                        commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
+                        SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
+                        DataTable tableChi = new DataTable();
+                        adapterChi.Fill(tableChi);
+                        Series seriesChi = chart1.Series.Add("Tiền điện");
+                        seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
+                        seriesChi.ChartType = SeriesChartType.Line;
+                        seriesChi.Color = Color.Black;
+                        chart1.DataBind();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                using (connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string queryChi = "SELECT DAY(ThoiGian) AS Ngay, SUM(-SoTien) AS SoTien " +
+                                        "FROM ChiTieu " +
+                                        "WHERE DanhMucID = '7' AND LoaiID = '2' AND NDID = @UserID " +
+                                         "GROUP BY DAY(ThoiGian)";
+                    using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
+                    {
+                        commandChi.Parameters.AddWithValue("@UserID", Constants.UserID);
+                        SqlDataAdapter adapterChi = new SqlDataAdapter(commandChi);
+                        DataTable tableChi = new DataTable();
+                        adapterChi.Fill(tableChi);
+                        Series seriesChi = chart1.Series.Add("Tiền nước");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Ngay", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Black;

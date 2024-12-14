@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trangchu));
             panel1 = new Panel();
+            bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
             bunifuThinButton25 = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -42,7 +43,6 @@
             btnUser = new Bunifu.Framework.UI.BunifuThinButton2();
             bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
             bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             pictureBox5 = new PictureBox();
             bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -58,6 +58,12 @@
             txtThu = new TextBox();
             label1 = new Label();
             panel3 = new Panel();
+            panel7 = new Panel();
+            txtNuoc = new TextBox();
+            label10 = new Label();
+            panel2 = new Panel();
+            txtDien = new TextBox();
+            label4 = new Label();
             bunifuThinButton26 = new Bunifu.Framework.UI.BunifuThinButton2();
             panel11 = new Panel();
             txtBanBe = new TextBox();
@@ -93,6 +99,8 @@
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            panel7.SuspendLayout();
+            panel2.SuspendLayout();
             panel11.SuspendLayout();
             panel9.SuspendLayout();
             panel12.SuspendLayout();
@@ -102,6 +110,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(bunifuThinButton21);
             panel1.Controls.Add(pictureBox7);
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(bunifuThinButton25);
@@ -113,7 +122,6 @@
             panel1.Controls.Add(btnUser);
             panel1.Controls.Add(bunifuThinButton24);
             panel1.Controls.Add(bunifuThinButton22);
-            panel1.Controls.Add(bunifuThinButton21);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(bunifuThinButton23);
             panel1.Dock = DockStyle.Left;
@@ -121,6 +129,30 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(232, 679);
             panel1.TabIndex = 0;
+            // 
+            // bunifuThinButton21
+            // 
+            bunifuThinButton21.ActiveBorderThickness = 1;
+            bunifuThinButton21.ActiveCornerRadius = 20;
+            bunifuThinButton21.ActiveFillColor = Color.FromArgb(53, 45, 125);
+            bunifuThinButton21.ActiveForecolor = Color.Black;
+            bunifuThinButton21.ActiveLineColor = Color.FromArgb(53, 45, 125);
+            bunifuThinButton21.BackColor = Color.FromArgb(53, 45, 125);
+            bunifuThinButton21.BackgroundImage = (Image)resources.GetObject("bunifuThinButton21.BackgroundImage");
+            bunifuThinButton21.ButtonText = "TRANG CHỦ";
+            bunifuThinButton21.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bunifuThinButton21.ForeColor = Color.WhiteSmoke;
+            bunifuThinButton21.IdleBorderThickness = 1;
+            bunifuThinButton21.IdleCornerRadius = 20;
+            bunifuThinButton21.IdleFillColor = Color.FromArgb(53, 45, 125);
+            bunifuThinButton21.IdleForecolor = Color.White;
+            bunifuThinButton21.IdleLineColor = Color.FromArgb(53, 45, 125);
+            bunifuThinButton21.Location = new Point(71, 145);
+            bunifuThinButton21.Margin = new Padding(5);
+            bunifuThinButton21.Name = "bunifuThinButton21";
+            bunifuThinButton21.Size = new Size(106, 51);
+            bunifuThinButton21.TabIndex = 13;
+            bunifuThinButton21.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox7
             // 
@@ -206,7 +238,7 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(53, 45, 125);
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(7, 144);
+            pictureBox2.Location = new Point(7, 145);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(56, 42);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -297,30 +329,6 @@
             bunifuThinButton22.TextAlign = ContentAlignment.MiddleCenter;
             bunifuThinButton22.Click += bunifuThinButton22_Click;
             // 
-            // bunifuThinButton21
-            // 
-            bunifuThinButton21.ActiveBorderThickness = 1;
-            bunifuThinButton21.ActiveCornerRadius = 20;
-            bunifuThinButton21.ActiveFillColor = Color.FromArgb(255, 255, 128);
-            bunifuThinButton21.ActiveForecolor = Color.Black;
-            bunifuThinButton21.ActiveLineColor = Color.FromArgb(255, 255, 128);
-            bunifuThinButton21.BackColor = Color.FromArgb(53, 45, 125);
-            bunifuThinButton21.ButtonText = "TRANG CHỦ";
-            bunifuThinButton21.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bunifuThinButton21.ForeColor = Color.Transparent;
-            bunifuThinButton21.IdleBorderThickness = 1;
-            bunifuThinButton21.IdleCornerRadius = 20;
-            bunifuThinButton21.IdleFillColor = Color.FromArgb(255, 255, 128);
-            bunifuThinButton21.IdleForecolor = Color.Black;
-            bunifuThinButton21.IdleLineColor = Color.Black;
-            bunifuThinButton21.Location = new Point(11, 135);
-            bunifuThinButton21.Margin = new Padding(5);
-            bunifuThinButton21.Name = "bunifuThinButton21";
-            bunifuThinButton21.Size = new Size(216, 61);
-            bunifuThinButton21.TabIndex = 0;
-            bunifuThinButton21.TextAlign = ContentAlignment.MiddleCenter;
-            bunifuThinButton21.Click += bunifuThinButton21_Click;
-            // 
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.FromArgb(53, 45, 125);
@@ -388,6 +396,7 @@
             // 
             // txtDu
             // 
+            txtDu.Enabled = false;
             txtDu.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDu.Location = new Point(26, 96);
             txtDu.Name = "txtDu";
@@ -417,6 +426,7 @@
             // 
             // txtChi
             // 
+            txtChi.Enabled = false;
             txtChi.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtChi.Location = new Point(26, 80);
             txtChi.Name = "txtChi";
@@ -446,6 +456,7 @@
             // 
             // txtThu
             // 
+            txtThu.Enabled = false;
             txtThu.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtThu.Location = new Point(26, 95);
             txtThu.Name = "txtThu";
@@ -465,18 +476,80 @@
             // panel3
             // 
             panel3.BackColor = Color.SteelBlue;
+            panel3.Controls.Add(panel7);
+            panel3.Controls.Add(panel2);
             panel3.Controls.Add(bunifuThinButton26);
             panel3.Controls.Add(panel11);
             panel3.Controls.Add(panel9);
             panel3.Controls.Add(panel12);
             panel3.Controls.Add(panel8);
             panel3.Controls.Add(panel10);
-            panel3.Location = new Point(438, 33);
+            panel3.Location = new Point(438, 6);
             panel3.Margin = new Padding(6);
             panel3.Name = "panel3";
-            panel3.Size = new Size(459, 579);
+            panel3.Size = new Size(459, 648);
             panel3.TabIndex = 0;
             panel3.Paint += panel3_Paint;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.PaleTurquoise;
+            panel7.Controls.Add(txtNuoc);
+            panel7.Controls.Add(label10);
+            panel7.Location = new Point(25, 494);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(412, 56);
+            panel7.TabIndex = 8;
+            // 
+            // txtNuoc
+            // 
+            txtNuoc.Enabled = false;
+            txtNuoc.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNuoc.Location = new Point(143, 13);
+            txtNuoc.Multiline = true;
+            txtNuoc.Name = "txtNuoc";
+            txtNuoc.Size = new Size(228, 32);
+            txtNuoc.TabIndex = 7;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 12F);
+            label10.Location = new Point(14, 17);
+            label10.Name = "label10";
+            label10.Size = new Size(79, 18);
+            label10.TabIndex = 7;
+            label10.Text = "Tiền nước";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.PaleTurquoise;
+            panel2.Controls.Add(txtDien);
+            panel2.Controls.Add(label4);
+            panel2.Location = new Point(25, 410);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(412, 56);
+            panel2.TabIndex = 8;
+            // 
+            // txtDien
+            // 
+            txtDien.Enabled = false;
+            txtDien.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDien.Location = new Point(143, 13);
+            txtDien.Multiline = true;
+            txtDien.Name = "txtDien";
+            txtDien.Size = new Size(228, 32);
+            txtDien.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 12F);
+            label4.Location = new Point(14, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 18);
+            label4.TabIndex = 7;
+            label4.Text = "Tiền điện";
             // 
             // bunifuThinButton26
             // 
@@ -495,7 +568,7 @@
             bunifuThinButton26.IdleFillColor = Color.FromArgb(255, 255, 128);
             bunifuThinButton26.IdleForecolor = Color.Black;
             bunifuThinButton26.IdleLineColor = Color.Black;
-            bunifuThinButton26.Location = new Point(101, 488);
+            bunifuThinButton26.Location = new Point(112, 569);
             bunifuThinButton26.Margin = new Padding(5);
             bunifuThinButton26.Name = "bunifuThinButton26";
             bunifuThinButton26.Size = new Size(250, 61);
@@ -508,13 +581,14 @@
             panel11.BackColor = Color.PaleTurquoise;
             panel11.Controls.Add(txtBanBe);
             panel11.Controls.Add(label9);
-            panel11.Location = new Point(25, 398);
+            panel11.Location = new Point(25, 316);
             panel11.Name = "panel11";
             panel11.Size = new Size(412, 61);
             panel11.TabIndex = 3;
             // 
             // txtBanBe
             // 
+            txtBanBe.Enabled = false;
             txtBanBe.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBanBe.Location = new Point(140, 10);
             txtBanBe.Multiline = true;
@@ -537,13 +611,14 @@
             panel9.BackColor = Color.PaleTurquoise;
             panel9.Controls.Add(txtMuaSam);
             panel9.Controls.Add(label7);
-            panel9.Location = new Point(25, 218);
+            panel9.Location = new Point(25, 167);
             panel9.Name = "panel9";
             panel9.Size = new Size(412, 52);
             panel9.TabIndex = 3;
             // 
             // txtMuaSam
             // 
+            txtMuaSam.Enabled = false;
             txtMuaSam.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMuaSam.Location = new Point(143, 8);
             txtMuaSam.Multiline = true;
@@ -566,13 +641,14 @@
             panel12.BackColor = Color.PaleTurquoise;
             panel12.Controls.Add(txtDiLai);
             panel12.Controls.Add(label8);
-            panel12.Location = new Point(25, 310);
+            panel12.Location = new Point(25, 236);
             panel12.Name = "panel12";
             panel12.Size = new Size(412, 56);
             panel12.TabIndex = 2;
             // 
             // txtDiLai
             // 
+            txtDiLai.Enabled = false;
             txtDiLai.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDiLai.Location = new Point(143, 13);
             txtDiLai.Multiline = true;
@@ -595,13 +671,14 @@
             panel8.BackColor = Color.PaleTurquoise;
             panel8.Controls.Add(txtAnuong);
             panel8.Controls.Add(label5);
-            panel8.Location = new Point(25, 26);
+            panel8.Location = new Point(25, 27);
             panel8.Name = "panel8";
             panel8.Size = new Size(412, 55);
             panel8.TabIndex = 1;
             // 
             // txtAnuong
             // 
+            txtAnuong.Enabled = false;
             txtAnuong.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAnuong.Location = new Point(143, 11);
             txtAnuong.Multiline = true;
@@ -624,13 +701,14 @@
             panel10.BackColor = Color.PaleTurquoise;
             panel10.Controls.Add(txtPhong);
             panel10.Controls.Add(label6);
-            panel10.Location = new Point(25, 121);
+            panel10.Location = new Point(25, 96);
             panel10.Name = "panel10";
             panel10.Size = new Size(412, 54);
             panel10.TabIndex = 2;
             // 
             // txtPhong
             // 
+            txtPhong.Enabled = false;
             txtPhong.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPhong.Location = new Point(143, 10);
             txtPhong.Multiline = true;
@@ -707,6 +785,10 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             panel9.ResumeLayout(false);
@@ -725,7 +807,6 @@
         private Panel panel1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
@@ -772,5 +853,12 @@
         private PictureBox pictureBox6;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton25;
         private PictureBox pictureBox7;
+        private Panel panel7;
+        private TextBox txtNuoc;
+        private Label label10;
+        private Panel panel2;
+        private TextBox txtDien;
+        private Label label4;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }

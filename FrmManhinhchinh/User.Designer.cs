@@ -33,6 +33,7 @@
             bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             panelUser = new Panel();
             bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
             panelUser.SuspendLayout();
             SuspendLayout();
             // 
@@ -89,6 +90,7 @@
             // panelUser
             // 
             panelUser.BackColor = Color.White;
+            panelUser.Controls.Add(bunifuThinButton23);
             panelUser.Controls.Add(bunifuThinButton22);
             panelUser.Controls.Add(bunifuThinButton21);
             panelUser.Controls.Add(bunifuThinButton26);
@@ -107,7 +109,7 @@
             bunifuThinButton22.ActiveLineColor = Color.FromArgb(255, 255, 128);
             bunifuThinButton22.BackColor = Color.White;
             bunifuThinButton22.BackgroundImage = (Image)resources.GetObject("bunifuThinButton22.BackgroundImage");
-            bunifuThinButton22.ButtonText = "Ghi chú";
+            bunifuThinButton22.ButtonText = "Thông báo";
             bunifuThinButton22.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bunifuThinButton22.ForeColor = Color.White;
             bunifuThinButton22.IdleBorderThickness = 1;
@@ -122,6 +124,31 @@
             bunifuThinButton22.TabIndex = 13;
             bunifuThinButton22.TextAlign = ContentAlignment.MiddleCenter;
             bunifuThinButton22.Click += bunifuThinButton22_Click;
+            // 
+            // bunifuThinButton23
+            // 
+            bunifuThinButton23.ActiveBorderThickness = 1;
+            bunifuThinButton23.ActiveCornerRadius = 20;
+            bunifuThinButton23.ActiveFillColor = Color.FromArgb(255, 255, 128);
+            bunifuThinButton23.ActiveForecolor = Color.Black;
+            bunifuThinButton23.ActiveLineColor = Color.FromArgb(255, 255, 128);
+            bunifuThinButton23.BackColor = Color.White;
+            bunifuThinButton23.BackgroundImage = (Image)resources.GetObject("bunifuThinButton23.BackgroundImage");
+            bunifuThinButton23.ButtonText = "Mục tiêu tiết kiệm";
+            bunifuThinButton23.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bunifuThinButton23.ForeColor = Color.White;
+            bunifuThinButton23.IdleBorderThickness = 1;
+            bunifuThinButton23.IdleCornerRadius = 20;
+            bunifuThinButton23.IdleFillColor = Color.FromArgb(255, 255, 128);
+            bunifuThinButton23.IdleForecolor = Color.Black;
+            bunifuThinButton23.IdleLineColor = Color.Black;
+            bunifuThinButton23.Location = new Point(398, 241);
+            bunifuThinButton23.Margin = new Padding(5);
+            bunifuThinButton23.Name = "bunifuThinButton23";
+            bunifuThinButton23.Size = new Size(205, 61);
+            bunifuThinButton23.TabIndex = 14;
+            bunifuThinButton23.TextAlign = ContentAlignment.MiddleCenter;
+            bunifuThinButton23.Click += bunifuThinButton23_Click;
             // 
             // User
             // 
@@ -141,5 +168,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Panel panelUser;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
     }
 }

@@ -32,8 +32,8 @@ namespace FrmManhinhchinh
                 using (connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string queryThu = "SELECT DAY(ThoiGian) AS Thang, SUM(CASE WHEN LoaiID = 1  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY  DAY(ThoiGian)";
-                    string queryChi = "SELECT DAY(ThoiGian) AS Thang, SUM(-CASE WHEN LoaiID = 2  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY  DAY(ThoiGian)";
+                    string queryThu = "SELECT MONTH(ThoiGian) AS Thang, SUM(CASE WHEN LoaiID = 1  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY MONTH(ThoiGian)";
+                    string queryChi = "SELECT MONTH(ThoiGian) AS Thang, SUM(-CASE WHEN LoaiID = 2  THEN SoTien ELSE 0 END) AS SoTien FROM  ChiTieu WHERE NDID = @UserId  GROUP BY MONTH(ThoiGian)";
                     using (SqlCommand commandThu = new SqlCommand(queryThu, connection))
                     using (SqlCommand commandChi = new SqlCommand(queryChi, connection))
                     {
@@ -46,11 +46,11 @@ namespace FrmManhinhchinh
                         DataTable tableChi = new DataTable();
                         adapterThu.Fill(tableThu);
                         adapterChi.Fill(tableChi);
-                        Series seriesThu = chart1.Series.Add("Tien Thu");
+                        Series seriesThu = chart1.Series.Add("Tiền thu");
                         seriesThu.Points.DataBind(tableThu.AsEnumerable(), "Thang", "SoTien", "");
                         seriesThu.ChartType = SeriesChartType.Line;
                         seriesThu.Color = Color.Blue;
-                        Series seriesChi = chart1.Series.Add("Tien Chi");
+                        Series seriesChi = chart1.Series.Add("Tiền chi");
                         seriesChi.Points.DataBind(tableChi.AsEnumerable(), "Thang", "SoTien", "");
                         seriesChi.ChartType = SeriesChartType.Line;
                         seriesChi.Color = Color.Red;

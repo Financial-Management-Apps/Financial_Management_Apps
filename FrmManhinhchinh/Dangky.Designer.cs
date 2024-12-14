@@ -109,7 +109,7 @@
             // 
             btnDN.BackColor = Color.Turquoise;
             btnDN.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDN.Location = new Point(649, 433);
+            btnDN.Location = new Point(633, 433);
             btnDN.Name = "btnDN";
             btnDN.Size = new Size(118, 47);
             btnDN.TabIndex = 26;
@@ -122,7 +122,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(377, 444);
+            label3.Location = new Point(411, 444);
             label3.Name = "label3";
             label3.Size = new Size(192, 25);
             label3.TabIndex = 25;

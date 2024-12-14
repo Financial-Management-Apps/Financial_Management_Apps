@@ -43,7 +43,6 @@ namespace FrmManhinhchinh
                 // Tính tiền thu và hiển thị
                 int totalIncomeThu = connect.GetTotalIncomeForCategory(1, IncomeType.Thu);
                 txtThu.Text = totalIncomeThu.ToString();
-
                 // Tính tiền chi và hiển thị
                 int totalIncomeChi = connect.GetTotalIncomeForCategory(2, IncomeType.Chi);
                 txtChi.Text = totalIncomeChi.ToString();
@@ -77,8 +76,13 @@ namespace FrmManhinhchinh
                         case 3:
                             txtBanBe.Text = expense.TotalExpense.ToString();
                             break;
+                        case 6:
+                            txtDien.Text = expense.TotalExpense.ToString();
+                            break;
+                        case 7:
+                            txtNuoc.Text = expense.TotalExpense.ToString();
+                            break;     
                         default:
-                            // Xử lý nếu có danh mục khác
                             break;
                     }
                 }

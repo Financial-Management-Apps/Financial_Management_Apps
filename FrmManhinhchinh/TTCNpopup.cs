@@ -29,6 +29,12 @@ namespace FrmManhinhchinh
             txtDiaChi.Text = currentUser.DiaChi;
             txtPass.Text = currentUser.Password;
         }
-        
+
+        private void btnUpdateTK_Click(object sender, EventArgs e)
+        {
+            UpdateTK updateTK = new UpdateTK(currentUser.ID);
+            updateTK.Show();
+            this.Close();
+        }
     }
 }

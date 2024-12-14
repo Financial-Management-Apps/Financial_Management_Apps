@@ -52,7 +52,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chart1.Series.Add(series1);
-            chart1.Size = new Size(730, 466);
+            chart1.Size = new Size(708, 466);
             chart1.TabIndex = 0;
             chart1.Text = "chart1";
             // 
@@ -60,24 +60,24 @@
             // 
             btnhienthi.BackColor = Color.Transparent;
             btnhienthi.Font = new Font("Sitka Small", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnhienthi.Location = new Point(762, 118);
+            btnhienthi.Location = new Point(742, 125);
             btnhienthi.Margin = new Padding(4, 3, 4, 3);
             btnhienthi.Name = "btnhienthi";
             btnhienthi.Size = new Size(144, 71);
             btnhienthi.TabIndex = 1;
-            btnhienthi.Text = "Hiển Thị";
+            btnhienthi.Text = "Thống kê";
             btnhienthi.UseVisualStyleBackColor = false;
             btnhienthi.Click += button1_Click;
             // 
             // btnthoat
             // 
             btnthoat.Font = new Font("Sitka Small", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnthoat.Location = new Point(762, 225);
+            btnthoat.Location = new Point(742, 230);
             btnthoat.Margin = new Padding(4, 3, 4, 3);
             btnthoat.Name = "btnthoat";
             btnthoat.Size = new Size(144, 70);
             btnthoat.TabIndex = 2;
-            btnthoat.Text = "Thoát";
+            btnthoat.Text = "Thoát mục";
             btnthoat.UseVisualStyleBackColor = true;
             btnthoat.Click += btnthoat_Click;
             // 
@@ -86,7 +86,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(967, 492);
+            ClientSize = new Size(951, 492);
             Controls.Add(btnthoat);
             Controls.Add(btnhienthi);
             Controls.Add(chart1);
