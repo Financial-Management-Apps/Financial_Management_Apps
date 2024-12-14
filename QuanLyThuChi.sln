@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmManhinhchinh", "FrmManhi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLThuChiAPI", "QLThuChiAPI\QLThuChiAPI.csproj", "{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThuatToan", "ThuatToan\ThuatToan.csproj", "{D1650839-FBCB-40B2-A375-7B39CC8DD46D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0490F00F-C9CD-4A08-A02E-F6C5551A5EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1650839-FBCB-40B2-A375-7B39CC8DD46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1650839-FBCB-40B2-A375-7B39CC8DD46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1650839-FBCB-40B2-A375-7B39CC8DD46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1650839-FBCB-40B2-A375-7B39CC8DD46D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -58,9 +58,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-16, -56);
+            pictureBox1.Location = new Point(-18, -75);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(590, 524);
+            pictureBox1.Size = new Size(699, 699);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -68,9 +69,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(495, 22);
+            pictureBox2.Location = new Point(566, 29);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(152, 95);
+            pictureBox2.Size = new Size(174, 127);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -81,9 +83,9 @@
             label1.BackColor = Color.FromArgb(53, 45, 125);
             label1.Font = new Font("Microsoft JhengHei", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(40, 72);
+            label1.Location = new Point(46, 96);
             label1.Name = "label1";
-            label1.Size = new Size(241, 45);
+            label1.Size = new Size(297, 56);
             label1.TabIndex = 2;
             label1.Text = "PHẦN MỀM ";
             // 
@@ -91,9 +93,10 @@
             // 
             txtMK.BackColor = Color.LightGray;
             txtMK.BorderStyle = BorderStyle.None;
-            txtMK.Location = new Point(22, 18);
+            txtMK.Location = new Point(25, 24);
+            txtMK.Margin = new Padding(3, 4, 3, 4);
             txtMK.Name = "txtMK";
-            txtMK.Size = new Size(184, 16);
+            txtMK.Size = new Size(210, 20);
             txtMK.TabIndex = 3;
             txtMK.UseSystemPasswordChar = true;
             // 
@@ -101,9 +104,10 @@
             // 
             txtTK.BackColor = Color.LightGray;
             txtTK.BorderStyle = BorderStyle.None;
-            txtTK.Location = new Point(22, 17);
+            txtTK.Location = new Point(25, 23);
+            txtTK.Margin = new Padding(3, 4, 3, 4);
             txtTK.Name = "txtTK";
-            txtTK.Size = new Size(184, 16);
+            txtTK.Size = new Size(210, 20);
             txtTK.TabIndex = 4;
             // 
             // label2
@@ -111,9 +115,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(53, 45, 125);
-            label2.Location = new Point(473, 134);
+            label2.Location = new Point(541, 179);
             label2.Name = "label2";
-            label2.Size = new Size(204, 45);
+            label2.Size = new Size(251, 54);
             label2.TabIndex = 5;
             label2.Text = "ĐĂNG NHẬP";
             // 
@@ -121,18 +125,20 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(txtTK);
-            panel1.Location = new Point(461, 220);
+            panel1.Location = new Point(527, 293);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(229, 47);
+            panel1.Size = new Size(262, 63);
             panel1.TabIndex = 6;
             // 
             // panel2
             // 
             panel2.BackColor = Color.LightGray;
             panel2.Controls.Add(txtMK);
-            panel2.Location = new Point(461, 287);
+            panel2.Location = new Point(527, 383);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(229, 47);
+            panel2.Size = new Size(262, 63);
             panel2.TabIndex = 7;
             // 
             // bunifuElipse1
@@ -149,9 +155,10 @@
             // 
             btnDangnhap.BackColor = Color.FromArgb(224, 224, 224);
             btnDangnhap.ForeColor = Color.Black;
-            btnDangnhap.Location = new Point(461, 369);
+            btnDangnhap.Location = new Point(527, 492);
+            btnDangnhap.Margin = new Padding(3, 4, 3, 4);
             btnDangnhap.Name = "btnDangnhap";
-            btnDangnhap.Size = new Size(75, 23);
+            btnDangnhap.Size = new Size(86, 31);
             btnDangnhap.TabIndex = 8;
             btnDangnhap.Text = "Đăng Nhập";
             btnDangnhap.UseVisualStyleBackColor = false;
@@ -159,9 +166,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(615, 417);
+            button2.Location = new Point(703, 556);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(86, 31);
             button2.TabIndex = 9;
             button2.Text = "Đăng ký";
             button2.UseVisualStyleBackColor = true;
@@ -170,9 +178,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(461, 421);
+            label3.Location = new Point(527, 561);
             label3.Name = "label3";
-            label3.Size = new Size(140, 15);
+            label3.Size = new Size(175, 20);
             label3.TabIndex = 10;
             label3.Text = "Bạn không có tài khoản ?";
             // 
@@ -183,9 +191,10 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.ForeColor = Color.Transparent;
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
-            btnExit.Location = new Point(49, 1);
+            btnExit.Location = new Point(56, 1);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(31, 19);
+            btnExit.Size = new Size(35, 25);
             btnExit.TabIndex = 15;
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
@@ -197,9 +206,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Transparent;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(25, 1);
+            button1.Location = new Point(29, 1);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(27, 19);
+            button1.Size = new Size(31, 25);
             button1.TabIndex = 14;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
@@ -212,8 +222,9 @@
             button3.ForeColor = Color.Transparent;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.Location = new Point(0, 1);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(31, 19);
+            button3.Size = new Size(35, 25);
             button3.TabIndex = 13;
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
@@ -224,9 +235,9 @@
             label4.BackColor = Color.FromArgb(53, 45, 125);
             label4.Font = new Font("Microsoft JhengHei", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(0, 134);
+            label4.Location = new Point(0, 179);
             label4.Name = "label4";
-            label4.Size = new Size(305, 40);
+            label4.Size = new Size(381, 50);
             label4.TabIndex = 16;
             label4.Text = "QUẢN LÝ CHI TIÊU";
             // 
@@ -234,19 +245,20 @@
             // 
             pictureBox3.BackColor = Color.FromArgb(53, 45, 125);
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(49, 187);
+            pictureBox3.Location = new Point(56, 249);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(187, 163);
+            pictureBox3.Size = new Size(214, 217);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
             // 
             // Dangnhap
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(756, 452);
+            ClientSize = new Size(864, 603);
             Controls.Add(pictureBox3);
             Controls.Add(label4);
             Controls.Add(btnExit);
@@ -262,6 +274,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Dangnhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
