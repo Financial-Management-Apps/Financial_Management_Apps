@@ -274,7 +274,7 @@
             btnUser.Location = new Point(107, 33);
             btnUser.Margin = new Padding(5);
             btnUser.Name = "btnUser";
-            btnUser.Size = new Size(109, 43);
+            btnUser.Size = new Size(121, 43);
             btnUser.TabIndex = 5;
             btnUser.TextAlign = ContentAlignment.MiddleCenter;
             btnUser.Click += btnUser_Click;
@@ -380,7 +380,7 @@
             panelDesktopPane.Dock = DockStyle.Right;
             panelDesktopPane.Location = new Point(244, 6);
             panelDesktopPane.Name = "panelDesktopPane";
-            panelDesktopPane.Size = new Size(958, 679);
+            panelDesktopPane.Size = new Size(1089, 679);
             panelDesktopPane.TabIndex = 1;
             // 
             // panel6
@@ -400,7 +400,7 @@
             txtDu.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDu.Location = new Point(26, 96);
             txtDu.Name = "txtDu";
-            txtDu.Size = new Size(223, 33);
+            txtDu.Size = new Size(223, 39);
             txtDu.TabIndex = 3;
             // 
             // label3
@@ -409,7 +409,7 @@
             label3.Font = new Font("Arial", 12F);
             label3.Location = new Point(26, 36);
             label3.Name = "label3";
-            label3.Size = new Size(135, 18);
+            label3.Size = new Size(174, 23);
             label3.TabIndex = 2;
             label3.Text = "SỐ TIỀN CÒN LẠI";
             // 
@@ -430,7 +430,7 @@
             txtChi.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtChi.Location = new Point(26, 80);
             txtChi.Name = "txtChi";
-            txtChi.Size = new Size(223, 33);
+            txtChi.Size = new Size(223, 39);
             txtChi.TabIndex = 2;
             // 
             // label2
@@ -439,7 +439,7 @@
             label2.Font = new Font("Arial", 12F);
             label2.Location = new Point(26, 29);
             label2.Name = "label2";
-            label2.Size = new Size(120, 18);
+            label2.Size = new Size(156, 23);
             label2.TabIndex = 1;
             label2.Text = "TỔNG TIỀN CHI";
             // 
@@ -460,7 +460,7 @@
             txtThu.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtThu.Location = new Point(26, 95);
             txtThu.Name = "txtThu";
-            txtThu.Size = new Size(223, 33);
+            txtThu.Size = new Size(223, 39);
             txtThu.TabIndex = 1;
             // 
             // label1
@@ -469,7 +469,7 @@
             label1.Font = new Font("Arial", 12F);
             label1.Location = new Point(26, 43);
             label1.Name = "label1";
-            label1.Size = new Size(125, 18);
+            label1.Size = new Size(161, 23);
             label1.TabIndex = 0;
             label1.Text = "TỔNG TIỀN THU";
             // 
@@ -517,7 +517,7 @@
             label10.Font = new Font("Arial", 12F);
             label10.Location = new Point(14, 17);
             label10.Name = "label10";
-            label10.Size = new Size(79, 18);
+            label10.Size = new Size(98, 23);
             label10.TabIndex = 7;
             label10.Text = "Tiền nước";
             // 
@@ -547,7 +547,7 @@
             label4.Font = new Font("Arial", 12F);
             label4.Location = new Point(14, 17);
             label4.Name = "label4";
-            label4.Size = new Size(71, 18);
+            label4.Size = new Size(88, 23);
             label4.TabIndex = 7;
             label4.Text = "Tiền điện";
             // 
@@ -602,7 +602,7 @@
             label9.Font = new Font("Arial", 12F);
             label9.Location = new Point(18, 21);
             label9.Name = "label9";
-            label9.Size = new Size(60, 18);
+            label9.Size = new Size(74, 23);
             label9.TabIndex = 8;
             label9.Text = "Bạn Bè";
             // 
@@ -632,7 +632,7 @@
             label7.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(18, 17);
             label7.Name = "label7";
-            label7.Size = new Size(75, 18);
+            label7.Size = new Size(94, 23);
             label7.TabIndex = 6;
             label7.Text = "Mua Sắm";
             // 
@@ -662,7 +662,7 @@
             label8.Font = new Font("Arial", 12F);
             label8.Location = new Point(14, 17);
             label8.Name = "label8";
-            label8.Size = new Size(95, 18);
+            label8.Size = new Size(117, 23);
             label8.TabIndex = 7;
             label8.Text = "Phương tiện";
             // 
@@ -692,7 +692,7 @@
             label5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(14, 15);
             label5.Name = "label5";
-            label5.Size = new Size(87, 18);
+            label5.Size = new Size(109, 23);
             label5.TabIndex = 4;
             label5.Text = "Thực phẩm";
             // 
@@ -722,7 +722,7 @@
             label6.Font = new Font("Arial", 12F);
             label6.Location = new Point(15, 15);
             label6.Name = "label6";
-            label6.Size = new Size(86, 18);
+            label6.Size = new Size(107, 23);
             label6.TabIndex = 5;
             label6.Text = "Tiền Phòng";
             // 
@@ -760,7 +760,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(53, 45, 125);
-            ClientSize = new Size(1208, 691);
+            ClientSize = new Size(1339, 691);
             Controls.Add(panelDesktopPane);
             Controls.Add(panel1);
             Font = new Font("Century", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);

@@ -56,14 +56,18 @@ namespace QLThuChiAPI.Controllers
         }
 
         [HttpGet("Wallet")]
-        public ActionResult<int> GetWalletAmount()
+        public ActionResult<int> GetWalletAmount([FromBody] Dictionary<string, object> data)
         {
+            int userId = JsonConvert.DeserializeObject<int>(data["UserID"].ToString());
+            Constants.UserID = userId;
             return QLCTDAO.GetAmountWallet();
         }
 
         [HttpPut("Wallet")]
         public IActionResult UpdateWallet([FromBody] Dictionary<string, object> data)
         {
+            int userId = JsonConvert.DeserializeObject<int>(data["UserID"].ToString());
+            Constants.UserID = userId;
             int amount = JsonConvert.DeserializeObject<int>(data["amount"].ToString());
             QLCTDAO.UpdateWallet(amount);
             return Ok();
@@ -103,6 +107,22 @@ namespace QLThuChiAPI.Controllers
             return _connect.NguoiDung(query);
         }
 
+        [HttpPut("NguoiDung")]
+        public ActionResult<List<QLThuChiAPI.Data.NguoiDung>> UpdateNguoiDung([FromBody] Dictionary<string, object> data)
+        {
+            int userId = JsonConvert.DeserializeObject<int>(data["UserID"].ToString());
+            Constants.UserID = userId;
+            string hoTen = data["HoTen"].ToString();
+            string gioiTinh = data["GioiTinh"].ToString();
+            DateTime ngaySinh = DateTime.Parse(data["NgaySinh"].ToString());
+            string email = data["Email"].ToString();
+            string diaChi = data["DiaChi"].ToString();
+            string password = data["Password"].ToString();
+
+            string message = QLCTDAO.UpdateAccount(userId, hoTen, gioiTinh, ngaySinh, email, diaChi, password);
+            return Ok(message);
+        }
+
         [HttpPost("TaiKhoan")]
         public IActionResult AddNguoiDung([FromBody] Dictionary<string, object> data)
         {
@@ -120,10 +140,11 @@ namespace QLThuChiAPI.Controllers
 
         // Thu Methods
         [HttpGet("Thu")]
-        public ActionResult<int> GetTotalIncomeForCategory([FromBody] Dictionary<string, object> data, int userId)
+        public ActionResult<int> GetTotalIncomeForCategory([FromBody] Dictionary<string, object> data)
         {
             int category = Convert.ToInt32(data["Category"]);
             IncomeType incomeType = JsonConvert.DeserializeObject<IncomeType>(data["IncomeType"].ToString());
+            int userId = JsonConvert.DeserializeObject<int>(data["UserID"].ToString());
             Constants.UserID = userId;
 
             return _connect.GetTotalIncomeForCategory(category, incomeType);

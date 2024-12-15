@@ -53,7 +53,7 @@ namespace FrmManhinhchinh
                     MessageBox.Show("Email hoặc mật khẩu không chính xác !", "Thông Báo");
                 }
             }
-        }      
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {

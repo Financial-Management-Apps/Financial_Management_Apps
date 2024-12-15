@@ -28,7 +28,9 @@ namespace ThuatToan
                 { 3, "Bạn bè" },
                 { 4, "Mua sắm" },
                 { 5, "Tiền phòng" },
-                { 6, "Lương" }
+                { 6, "Tiền điện" },
+                { 7, "Tiền nước" },
+                { 8, "Lương" }
             };
             _categoryStats = new Dictionary<int, CategoryStats>();
             _historicalData = new List<FinancialData>();

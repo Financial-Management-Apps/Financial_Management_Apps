@@ -43,7 +43,7 @@ namespace FrmManhinhchinh
             // Setup category selection
             categoryComboBox = new ComboBox();
             categoryComboBox.Items.AddRange(new string[] { 
-                "Đi lại", "Ăn uống", "Bạn bè", "Mua sắm", "Tiền phòng", "Lương"
+                "Đi lại", "Ăn uống", "Bạn bè", "Mua sắm", "Tiền phòng", "Tiền điện", "Tiền nước", "Lương"
             });
             categoryComboBox.Location = new Point(20, 320);
             categoryComboBox.Width = 200;
@@ -111,7 +111,9 @@ namespace FrmManhinhchinh
             {"Bạn bè", 3},
             {"Mua sắm", 4},
             {"Tiền phòng", 5},
-            {"Lương", 6}
+            {"Tiền điện", 6 },
+            {"Tiền nước", 7 },
+            {"Lương", 8}
         };
 
             return categoryMap.GetValueOrDefault(categoryName, 1); // Default to 1 if not found

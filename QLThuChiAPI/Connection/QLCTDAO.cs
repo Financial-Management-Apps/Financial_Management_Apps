@@ -163,5 +163,43 @@ namespace QLThuChiAPI.Connection
                 int rowsAffected = command.ExecuteNonQuery();
             }
         }
+
+        public static string UpdateAccount(int userId, string hoTen, string gioiTinh, DateTime? ngaySinh, string email, string diaChi, string password)
+        {
+            string message = "";
+            string query = "UPDATE NguoiDung SET HoTen = @HoTen, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, Email = @Email, DiaChi = @DiaChi, Password = @Password WHERE ID = @UserID";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserID", userId);
+                        cmd.Parameters.AddWithValue("@HoTen", hoTen);
+                        cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);
+                        cmd.Parameters.AddWithValue("@NgaySinh", (object)ngaySinh ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@DiaChi", (object)diaChi ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Password", password);
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Kiểm tra kết quả
+                        if (rowsAffected > 0)
+                        {
+                            return message = "Cập nhật thông tin người dùng thành công";
+                        }
+                        else
+                        {
+                            return message = "Không thấy dữ liệu mới, không cập nhật tài khoản";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return message = $"Đã xảy ra lỗi khi cập nhật tài khoản: {ex.Message}";
+            }
+        }
     }
 }

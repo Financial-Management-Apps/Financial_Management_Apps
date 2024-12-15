@@ -81,7 +81,7 @@ namespace FrmManhinhchinh
                             break;
                         case 7:
                             txtNuoc.Text = expense.TotalExpense.ToString();
-                            break;     
+                            break;
                         default:
                             break;
                     }

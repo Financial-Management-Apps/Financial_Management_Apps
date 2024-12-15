@@ -100,18 +100,20 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-1, -2);
+            panel1.Location = new Point(-1, -3);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(865, 491);
+            panel1.Size = new Size(988, 653);
             panel1.TabIndex = 0;
             // 
             // btnDN
             // 
             btnDN.BackColor = Color.Turquoise;
             btnDN.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDN.Location = new Point(633, 433);
+            btnDN.Location = new Point(723, 577);
+            btnDN.Margin = new Padding(3, 4, 3, 4);
             btnDN.Name = "btnDN";
-            btnDN.Size = new Size(118, 47);
+            btnDN.Size = new Size(153, 63);
             btnDN.TabIndex = 26;
             btnDN.Text = "Đăng nhập";
             btnDN.UseVisualStyleBackColor = false;
@@ -122,9 +124,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(411, 444);
+            label3.Location = new Point(470, 592);
             label3.Name = "label3";
-            label3.Size = new Size(192, 25);
+            label3.Size = new Size(243, 32);
             label3.TabIndex = 25;
             label3.Text = "Bạn đã có tài khoản ?";
             // 
@@ -145,10 +147,10 @@
             btnDangky.IdleFillColor = Color.White;
             btnDangky.IdleForecolor = Color.FromArgb(72, 133, 237);
             btnDangky.IdleLineColor = Color.FromArgb(72, 133, 237);
-            btnDangky.Location = new Point(484, 370);
-            btnDangky.Margin = new Padding(10);
+            btnDangky.Location = new Point(553, 493);
+            btnDangky.Margin = new Padding(11, 13, 11, 13);
             btnDangky.Name = "btnDangky";
-            btnDangky.Size = new Size(214, 50);
+            btnDangky.Size = new Size(245, 67);
             btnDangky.TabIndex = 24;
             btnDangky.TextAlign = ContentAlignment.MiddleCenter;
             btnDangky.Click += btnDangky_Click;
@@ -157,9 +159,10 @@
             // 
             pictureBox3.BackColor = Color.Turquoise;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(52, 134);
+            pictureBox3.Location = new Point(59, 179);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(207, 275);
+            pictureBox3.Size = new Size(237, 367);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 23;
             pictureBox3.TabStop = false;
@@ -170,9 +173,9 @@
             label9.BackColor = Color.Turquoise;
             label9.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(11, 74);
+            label9.Location = new Point(3, 102);
             label9.Name = "label9";
-            label9.Size = new Size(292, 37);
+            label9.Size = new Size(368, 46);
             label9.TabIndex = 22;
             label9.Text = "ĐĂNG KÝ TÀI KHOẢN";
             // 
@@ -181,9 +184,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(337, 334);
+            label8.Location = new Point(385, 445);
             label8.Name = "label8";
-            label8.Size = new Size(137, 20);
+            label8.Size = new Size(178, 25);
             label8.TabIndex = 20;
             label8.Text = "Xác nhận Password:";
             // 
@@ -192,9 +195,10 @@
             panel8.BackColor = Color.FromArgb(235, 235, 235);
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(txtConfirm);
-            panel8.Location = new Point(484, 326);
+            panel8.Location = new Point(553, 435);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(297, 35);
+            panel8.Size = new Size(339, 46);
             panel8.TabIndex = 11;
             // 
             // txtConfirm
@@ -202,9 +206,10 @@
             txtConfirm.BackColor = Color.FromArgb(235, 235, 235);
             txtConfirm.BorderStyle = BorderStyle.None;
             txtConfirm.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtConfirm.Location = new Point(10, 7);
+            txtConfirm.Location = new Point(11, 9);
+            txtConfirm.Margin = new Padding(3, 4, 3, 4);
             txtConfirm.Name = "txtConfirm";
-            txtConfirm.Size = new Size(271, 18);
+            txtConfirm.Size = new Size(310, 23);
             txtConfirm.TabIndex = 4;
             txtConfirm.UseSystemPasswordChar = true;
             // 
@@ -213,9 +218,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(397, 285);
+            label7.Location = new Point(454, 380);
             label7.Name = "label7";
-            label7.Size = new Size(73, 20);
+            label7.Size = new Size(95, 25);
             label7.TabIndex = 19;
             label7.Text = "Password:";
             // 
@@ -224,9 +229,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(411, 240);
+            label6.Location = new Point(470, 320);
             label6.Name = "label6";
-            label6.Size = new Size(60, 20);
+            label6.Size = new Size(77, 25);
             label6.TabIndex = 18;
             label6.Text = "Địa Chỉ:";
             // 
@@ -235,9 +240,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(423, 193);
+            label5.Location = new Point(483, 257);
             label5.Name = "label5";
-            label5.Size = new Size(49, 20);
+            label5.Size = new Size(62, 25);
             label5.TabIndex = 17;
             label5.Text = "Email:";
             // 
@@ -246,9 +251,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(393, 150);
+            label4.Location = new Point(449, 200);
             label4.Name = "label4";
-            label4.Size = new Size(79, 20);
+            label4.Size = new Size(102, 25);
             label4.TabIndex = 16;
             label4.Text = "Ngày Sinh:";
             // 
@@ -257,9 +262,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(401, 100);
+            label2.Location = new Point(458, 133);
             label2.Name = "label2";
-            label2.Size = new Size(71, 20);
+            label2.Size = new Size(92, 25);
             label2.TabIndex = 15;
             label2.Text = "Giới Tính:";
             // 
@@ -268,9 +273,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(401, 51);
+            label1.Location = new Point(458, 68);
             label1.Name = "label1";
-            label1.Size = new Size(78, 20);
+            label1.Size = new Size(98, 25);
             label1.TabIndex = 14;
             label1.Text = "Họ và Tên:";
             // 
@@ -279,9 +284,10 @@
             panel5.BackColor = Color.FromArgb(235, 235, 235);
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(txtEmail);
-            panel5.Location = new Point(484, 177);
+            panel5.Location = new Point(553, 236);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(297, 35);
+            panel5.Size = new Size(339, 46);
             panel5.TabIndex = 9;
             // 
             // txtEmail
@@ -289,9 +295,10 @@
             txtEmail.BackColor = Color.FromArgb(235, 235, 235);
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(10, 9);
+            txtEmail.Location = new Point(11, 12);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(271, 18);
+            txtEmail.Size = new Size(310, 23);
             txtEmail.TabIndex = 4;
             // 
             // panel6
@@ -299,9 +306,10 @@
             panel6.BackColor = Color.FromArgb(235, 235, 235);
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(txtPassword);
-            panel6.Location = new Point(484, 275);
+            panel6.Location = new Point(553, 367);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(297, 35);
+            panel6.Size = new Size(339, 46);
             panel6.TabIndex = 10;
             // 
             // txtPassword
@@ -309,9 +317,10 @@
             txtPassword.BackColor = Color.FromArgb(235, 235, 235);
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(10, 9);
+            txtPassword.Location = new Point(11, 12);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(271, 18);
+            txtPassword.Size = new Size(310, 23);
             txtPassword.TabIndex = 4;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -320,9 +329,10 @@
             panel4.BackColor = Color.FromArgb(235, 235, 235);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(txtNgaySinh);
-            panel4.Location = new Point(484, 134);
+            panel4.Location = new Point(553, 179);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(297, 35);
+            panel4.Size = new Size(339, 46);
             panel4.TabIndex = 8;
             // 
             // txtNgaySinh
@@ -330,9 +340,10 @@
             txtNgaySinh.BackColor = Color.FromArgb(235, 235, 235);
             txtNgaySinh.BorderStyle = BorderStyle.None;
             txtNgaySinh.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNgaySinh.Location = new Point(10, 9);
+            txtNgaySinh.Location = new Point(11, 12);
+            txtNgaySinh.Margin = new Padding(3, 4, 3, 4);
             txtNgaySinh.Name = "txtNgaySinh";
-            txtNgaySinh.Size = new Size(271, 18);
+            txtNgaySinh.Size = new Size(310, 23);
             txtNgaySinh.TabIndex = 4;
             // 
             // panel7
@@ -340,9 +351,10 @@
             panel7.BackColor = Color.FromArgb(235, 235, 235);
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(txtDiaChi);
-            panel7.Location = new Point(484, 224);
+            panel7.Location = new Point(553, 299);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(297, 35);
+            panel7.Size = new Size(339, 46);
             panel7.TabIndex = 11;
             // 
             // txtDiaChi
@@ -350,9 +362,10 @@
             txtDiaChi.BackColor = Color.FromArgb(235, 235, 235);
             txtDiaChi.BorderStyle = BorderStyle.None;
             txtDiaChi.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDiaChi.Location = new Point(10, 9);
+            txtDiaChi.Location = new Point(11, 12);
+            txtDiaChi.Margin = new Padding(3, 4, 3, 4);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(271, 18);
+            txtDiaChi.Size = new Size(310, 23);
             txtDiaChi.TabIndex = 4;
             // 
             // panel3
@@ -360,9 +373,10 @@
             panel3.BackColor = Color.FromArgb(235, 235, 235);
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(txtGioiTinh);
-            panel3.Location = new Point(484, 84);
+            panel3.Location = new Point(553, 112);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(297, 35);
+            panel3.Size = new Size(339, 46);
             panel3.TabIndex = 8;
             // 
             // txtGioiTinh
@@ -370,9 +384,10 @@
             txtGioiTinh.BackColor = Color.FromArgb(235, 235, 235);
             txtGioiTinh.BorderStyle = BorderStyle.None;
             txtGioiTinh.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtGioiTinh.Location = new Point(10, 9);
+            txtGioiTinh.Location = new Point(11, 12);
+            txtGioiTinh.Margin = new Padding(3, 4, 3, 4);
             txtGioiTinh.Name = "txtGioiTinh";
-            txtGioiTinh.Size = new Size(272, 18);
+            txtGioiTinh.Size = new Size(311, 23);
             txtGioiTinh.TabIndex = 4;
             // 
             // panel2
@@ -380,9 +395,10 @@
             panel2.BackColor = Color.FromArgb(235, 235, 235);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(txtHoTen);
-            panel2.Location = new Point(484, 35);
+            panel2.Location = new Point(553, 47);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(297, 35);
+            panel2.Size = new Size(339, 46);
             panel2.TabIndex = 7;
             // 
             // txtHoTen
@@ -390,18 +406,20 @@
             txtHoTen.BackColor = Color.FromArgb(235, 235, 235);
             txtHoTen.BorderStyle = BorderStyle.None;
             txtHoTen.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtHoTen.Location = new Point(10, 9);
+            txtHoTen.Location = new Point(11, 12);
+            txtHoTen.Margin = new Padding(3, 4, 3, 4);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(272, 18);
+            txtHoTen.Size = new Size(311, 23);
             txtHoTen.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-100, -37);
+            pictureBox1.Location = new Point(-114, -49);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(929, 565);
+            pictureBox1.Size = new Size(1062, 753);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -443,12 +461,13 @@
             // 
             // Dangky
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(865, 492);
+            ClientSize = new Size(989, 656);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Dangky";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dang Ky";
