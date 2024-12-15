@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box, Typography, Grid, Alert } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, BarChart, Bar } from 'recharts';
-import { useFakeData } from '../hook/useFakeData'; // Thay đổi import
-
+import { generateFakeTransactions } from '../utils/fakeData'; // Import dữ liệu giả
 
 const BUDGET = 2000000; // Ngân sách cho "Ăn uống" (2 triệu)
 
@@ -43,10 +42,9 @@ const Reports = () => {
   const [predictedExpense, setPredictedExpense] = useState(0);
   const [foodSpending, setFoodSpending] = useState(0);
 
-  // Sử dụng useFakeData để lấy dữ liệu
-  const transactions = useFakeData(12); // Giả lập 12 tháng dữ liệu
-
   useEffect(() => {
+    const transactions = generateFakeTransactions(12); // Giả lập 12 tháng dữ liệu
+
     const formattedData = transactions.reduce((acc, curr) => {
       const month = new Date(curr.date).toLocaleString('default', { month: 'short' }); // Lấy tên tháng
       const existingMonth = acc.find(item => item.month === month);
@@ -63,7 +61,7 @@ const Reports = () => {
       }
 
       return acc;
-    }, []); 
+    }, []);
 
     // Sắp xếp dữ liệu theo thứ tự tháng
     const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -84,7 +82,7 @@ const Reports = () => {
 
     setFoodSpending(foodSpending);
     setIsOverBudget(foodSpending > BUDGET);
-  }, [transactions]); // Thêm transactions vào mảng dependency
+  }, []);
 
   // Tính tổng thu nhập và chi tiêu
   const totalIncome = monthlyData.reduce((acc, item) => acc + item.income, 0);
