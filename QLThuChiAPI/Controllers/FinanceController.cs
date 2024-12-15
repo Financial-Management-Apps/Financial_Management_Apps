@@ -5,6 +5,7 @@ using QLThuChiAPI.Data;
 using QLThuChiAPI.Model.DTO;
 using QLThuChiAPI.Model.Command;
 using static QLThuChiAPI.Data.Connect;
+using QLThuChiAPI.Utils;
 
 namespace QLThuChiAPI.Controllers
 {
@@ -22,9 +23,11 @@ namespace QLThuChiAPI.Controllers
         }
 
         // QLCTDAO Methods
-        [HttpGet("ChiTieu")]
-        public ActionResult<List<ChiTieu>> GetAllChiTieu()
+        [HttpGet("ChiTieuNguoiDung")]
+        public ActionResult<List<ChiTieu>> GetAllChiTieu([FromBody] Dictionary<string, int> data)
         {
+            data.TryGetValue("UserID", out var userId);
+            Constants.UserID = userId;
             return QLCTDAO.GetAllQLCTDAO();
         }
 
@@ -100,30 +103,6 @@ namespace QLThuChiAPI.Controllers
             return _connect.NguoiDung(query);
         }
 
-        [HttpGet("GetAllUsers")]
-        [SwaggerOperation(Summary = "Get all users", Description = "Trả về danh sách tất cả người dùng từ cơ sở dữ liệu.")]
-        [SwaggerResponse(200, "Thành công", typeof(List<FrmManhinhchinh.Data.NguoiDung>))]
-        [SwaggerResponse(500, "Lỗi server")]
-        public ActionResult<List<FrmManhinhchinh.Data.NguoiDung>> GetAllUsers()
-        {
-            try
-            {
-                string query = "SELECT * FROM NguoiDung";
-                var result = _connect.NguoiDung(query);
-
-                if (result == null || result.Count == 0)
-                {
-                    return NotFound("No users found in the database.");
-                }
-
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
         [HttpPost("TaiKhoan")]
         public IActionResult AddNguoiDung([FromBody] Dictionary<string, object> data)
         {
@@ -141,10 +120,11 @@ namespace QLThuChiAPI.Controllers
 
         // Thu Methods
         [HttpGet("Thu")]
-        public ActionResult<int> GetTotalIncomeForCategory([FromBody] Dictionary<string, object> data)
+        public ActionResult<int> GetTotalIncomeForCategory([FromBody] Dictionary<string, object> data, int userId)
         {
             int category = Convert.ToInt32(data["Category"]);
             IncomeType incomeType = JsonConvert.DeserializeObject<IncomeType>(data["IncomeType"].ToString());
+            Constants.UserID = userId;
 
             return _connect.GetTotalIncomeForCategory(category, incomeType);
         }
