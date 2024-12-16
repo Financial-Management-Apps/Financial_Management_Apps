@@ -193,93 +193,6 @@ namespace ThuatToan
             }
         }
 
-        private double[][] NormalizeFeatures(double[][] inputs)
-        {
-            if (inputs == null || inputs.Length == 0)
-                return new double[0][];
-
-            int rows = inputs.Length;
-            int cols = FEATURE_COUNT;
-            var normalized = new double[rows][];
-
-            for (int i = 0; i < rows; i++)
-            {
-                normalized[i] = new double[cols];
-            }
-
-            // Calculate mean and std for each feature
-            for (int j = 0; j < cols; j++)
-            {
-                double sum = 0;
-                double count = 0;
-                
-                // Calculate mean
-                for (int i = 0; i < rows; i++)
-                {
-                    if (i < inputs.Length && inputs[i] != null && j < inputs[i].Length)
-                    {
-                        sum += inputs[i][j];
-                        count++;
-                    }
-                }
-                
-                double mean = count > 0 ? sum / count : 0;
-
-                // Calculate standard deviation
-                double sumSquares = 0;
-                for (int i = 0; i < rows; i++)
-                {
-                    if (i < inputs.Length && inputs[i] != null && j < inputs[i].Length)
-                    {
-                        sumSquares += Math.Pow(inputs[i][j] - mean, 2);
-                    }
-                }
-                double std = count > 1 ? Math.Sqrt(sumSquares / (count - 1)) : 1;
-                std = std == 0 ? 1 : std; // Avoid division by zero
-
-                // Normalize
-                for (int i = 0; i < rows; i++)
-                {
-                    if (i < inputs.Length && inputs[i] != null && j < inputs[i].Length)
-                    {
-                        normalized[i][j] = (inputs[i][j] - mean) / std;
-                    }
-                    else
-                    {
-                        normalized[i][j] = 0; // Default value for missing data
-                    }
-                }
-            }
-
-            return normalized;
-        }
-
-        private double[][] ExtractFeatures(List<FinancialData> data, int categoryId)
-        {
-            if (data == null || data.Count == 0)
-                return new double[0][];
-
-            var features = new List<double[]>();
-            var categoryData = data.Where(d => d.CategoryId == categoryId && d.IsExpense).ToList();
-
-            if (categoryData.Count < MIN_SAMPLES_FOR_TRAINING)
-                return new double[0][];
-
-            for (int i = 0; i < categoryData.Count; i++)
-            {
-                var feature = new double[FEATURE_COUNT];
-                feature[0] = categoryData[i].Amount;
-                feature[1] = categoryData[i].Date.Month;
-                feature[2] = categoryData[i].Date.Day;
-                feature[3] = (int)categoryData[i].Date.DayOfWeek;
-                feature[4] = i > 0 ? (categoryData[i].Date - categoryData[i - 1].Date).Days : 30;
-
-                features.Add(feature);
-            }
-
-            return features.ToArray();
-        }
-
         public FinancialPrediction PredictSpending(DateTime date, int categoryId, double currentIncome)
         {
             try
@@ -475,43 +388,6 @@ namespace ThuatToan
             });
 
             return recommendations;
-        }
-
-        private double CalculateConfidence(double predictedAmount, CategoryStats stats)
-        {
-            try
-            {
-                if (stats.StandardDeviation == 0 || double.IsNaN(stats.StandardDeviation))
-                {
-                    System.Diagnostics.Debug.WriteLine("Warning: Standard deviation is 0 or NaN");
-                    return 0.5;
-                }
-
-                // Calculate z-score (how many standard deviations from mean)
-                double zScore = Math.Abs(predictedAmount - stats.AverageAmount) / stats.StandardDeviation;
-                
-                System.Diagnostics.Debug.WriteLine($"Prediction: {predictedAmount}");
-                System.Diagnostics.Debug.WriteLine($"Average: {stats.AverageAmount}");
-                System.Diagnostics.Debug.WriteLine($"StdDev: {stats.StandardDeviation}");
-                System.Diagnostics.Debug.WriteLine($"Z-Score: {zScore}");
-
-                // Convert z-score to confidence level (inverse relationship)
-                // Using a more gradual decay function
-                double confidence = 1.0 / (1.0 + zScore * 0.5);
-
-                // Normalize to range [0.1, 0.9]
-                confidence = 0.1 + (0.8 * confidence);
-                
-                System.Diagnostics.Debug.WriteLine($"Calculated confidence: {confidence}");
-
-                // Round to 2 decimal places
-                return Math.Round(confidence, 2);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Confidence calculation error: {ex.Message}");
-                return 0.5;
-            }
         }
 
         private List<string> GenerateRecommendations(int categoryId, double predictedAmount, double income)

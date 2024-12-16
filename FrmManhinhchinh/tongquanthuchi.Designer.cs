@@ -44,15 +44,15 @@
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(4, 14);
-            chart1.Margin = new Padding(4, 3, 4, 3);
+            chart1.Location = new Point(5, 19);
+            chart1.Margin = new Padding(5, 4, 5, 4);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chart1.Series.Add(series1);
-            chart1.Size = new Size(708, 466);
+            chart1.Size = new Size(740, 497);
             chart1.TabIndex = 0;
             chart1.Text = "chart1";
             // 
@@ -60,10 +60,10 @@
             // 
             btnhienthi.BackColor = Color.Transparent;
             btnhienthi.Font = new Font("Sitka Small", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnhienthi.Location = new Point(742, 125);
-            btnhienthi.Margin = new Padding(4, 3, 4, 3);
+            btnhienthi.Location = new Point(767, 142);
+            btnhienthi.Margin = new Padding(5, 4, 5, 4);
             btnhienthi.Name = "btnhienthi";
-            btnhienthi.Size = new Size(144, 71);
+            btnhienthi.Size = new Size(165, 95);
             btnhienthi.TabIndex = 1;
             btnhienthi.Text = "Thống kê";
             btnhienthi.UseVisualStyleBackColor = false;
@@ -72,10 +72,10 @@
             // btnthoat
             // 
             btnthoat.Font = new Font("Sitka Small", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            btnthoat.Location = new Point(742, 230);
-            btnthoat.Margin = new Padding(4, 3, 4, 3);
+            btnthoat.Location = new Point(767, 285);
+            btnthoat.Margin = new Padding(5, 4, 5, 4);
             btnthoat.Name = "btnthoat";
-            btnthoat.Size = new Size(144, 70);
+            btnthoat.Size = new Size(165, 93);
             btnthoat.TabIndex = 2;
             btnthoat.Text = "Thoát mục";
             btnthoat.UseVisualStyleBackColor = true;
@@ -83,14 +83,14 @@
             // 
             // tongquanthuchi
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(951, 492);
+            ClientSize = new Size(985, 656);
             Controls.Add(btnthoat);
             Controls.Add(btnhienthi);
             Controls.Add(chart1);
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "tongquanthuchi";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
